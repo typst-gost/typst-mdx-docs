@@ -21,8 +21,7 @@ from utils import ensure_directories
 
 DEFAULT_DIST_SOURCE = Path("build/dist")
 DEFAULT_OUTPUT_DIR = Path("build/mdx")
-DEFAULT_ASSETS_OUT_DIR = DEFAULT_OUTPUT_DIR / "public" / "docs-assets" / "images"
-DEFAULT_ASSETS_PUBLIC_PATH = "/docs-assets/images"
+DEFAULT_ASSETS_PUBLIC_PATH = "/docs-assets"
 
 
 def resolve_site_root(source_dir: Path) -> Path:
@@ -143,7 +142,7 @@ def convert_single_page(
     output_dir: Path,
     link_prefix: str,
     math_format: str,
-    image_public_path: str,
+    assets_public_path: str,
 ) -> tuple[str, str, str | None]:
     route = page["route"]
     html_path: Path = page["html_path"]
@@ -155,7 +154,7 @@ def convert_single_page(
             html_content,
             link_prefix=link_prefix,
             math_format=math_format,
-            image_public_path=image_public_path,
+            assets_public_path=assets_public_path,
         )
 
         imports: list[str] = []
@@ -209,22 +208,30 @@ def fallback_scan_pages(site_root: Path) -> list[dict]:
     return pages
 
 
-def copy_images(site_root: Path, target_dir: Path) -> None:
-    src_images = site_root / "assets" / "images"
-    if not src_images.exists():
-        src_images = site_root.parent / "assets" / "images"
+def copy_site_assets(site_root: Path, target_base_dir: Path) -> None:
+    src_assets = site_root / "assets"
+    if not src_assets.exists():
+        src_assets = site_root.parent / "assets"
 
-    if not src_images.exists():
-        logger.warning(f"Images directory not found at {src_images}")
+    if not src_assets.exists():
+        logger.warning(f"Assets directory not found at {src_assets}")
         return
 
-    logger.info(f"Copying images from {src_images.resolve()} to {target_dir.resolve()}...")
-    if target_dir.exists():
-        shutil.rmtree(target_dir)
+    for folder_name in ("images", "icons"):
+        src_sub = src_assets / folder_name
+        dest_sub = target_base_dir / folder_name
 
-    target_dir.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copytree(src_images, target_dir)
-    logger.success(f"Copied {len(list(target_dir.iterdir()))} images to {target_dir.resolve()}")
+        if not src_sub.exists():
+            logger.warning(f"Source subfolder not found: {src_sub}")
+            continue
+
+        if dest_sub.exists():
+            shutil.rmtree(dest_sub)
+
+        dest_sub.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copytree(src_sub, dest_sub)
+        count = len(list(dest_sub.iterdir()))
+        logger.success(f"Copied {count} {folder_name} to {dest_sub.resolve()}")
 
 
 def parse_docs(
@@ -242,8 +249,11 @@ def parse_docs(
         shutil.rmtree(output_dir)
     ensure_directories([output_dir])
 
-    actual_assets_out_dir = assets_out_dir if assets_out_dir is not None else (output_dir / "public" / "docs-assets" / "images")
-    copy_images(site_root, actual_assets_out_dir)
+    # Директория для сохранения ассетов: по умолчанию <output_dir>/public/docs-assets
+    actual_assets_out_dir = (
+        assets_out_dir if assets_out_dir is not None else (output_dir / "public" / "docs-assets")
+    )
+    copy_site_assets(site_root, actual_assets_out_dir)
 
     nav_tree = extract_navigation_tree(site_root / "index.html")
     pages_to_process: list[dict] = []
@@ -345,13 +355,13 @@ def parse_args():
         "--assets-out-dir",
         type=Path,
         default=None,
-        help="Directory to copy images into (default: <output-dir>/public/docs-assets/images)",
+        help="Base directory to copy assets into (default: <output-dir>/public/docs-assets)",
     )
     parser.add_argument(
         "--assets-public-path",
         type=str,
         default=DEFAULT_ASSETS_PUBLIC_PATH,
-        help="Public URL path prefix to images in MDX (default: /docs-assets/images)",
+        help="Public URL path prefix for assets in MDX (default: /docs-assets)",
     )
     return parser.parse_args()
 

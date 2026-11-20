@@ -310,15 +310,12 @@ def process_math(element: Tag, math_format: str = "latex") -> str:
     is_block = element.get("display") == "block"
     latex = clean_latex(mathml_node_to_latex(element))
 
-    # Для блочных формул используем fenced code-блок ```math, который MDX/Acorn НЕ парсит как JSX!
     if is_block:
         return f"```math\n{latex}\n```"
 
-    # Для простых инлайн-выражений без сложных операторов (буквы, числа, греческие символы)
     if not any(c in latex for c in ("{", "}", "\\frac", "\\sqrt", "\\begin")):
         return f"${latex}$"
 
-    # Если внутри инлайн-формулы есть фигурные скобки, оборачиваем в чистый инлайн-код math, чтобы Acorn не падал
     return f"`{latex}`{{:math}}"
 
 
@@ -411,23 +408,31 @@ def normalize_href(href: str, link_prefix: str = "/") -> str:
     return f"{base}{sep}{anchor}" if sep else base
 
 
-def rewrite_image_src(src: str, image_public_path: str = "/docs-assets/images") -> str:
+def rewrite_asset_src(src: str, assets_public_path: str = "/docs-assets") -> str:
+    """Переписывает /assets/images/... и /assets/icons/... на <assets_public_path>/images/... и <assets_public_path>/icons/..."""
     if not src:
         return src
-    if src.startswith("/assets/images/"):
-        filename = src[len("/assets/images/"):]
-        prefix = image_public_path.rstrip("/")
-        return f"{prefix}/{filename}"
-    if src.startswith("assets/images/"):
-        filename = src[len("assets/images/"):]
-        prefix = image_public_path.rstrip("/")
-        return f"{prefix}/{filename}"
+
+    base_public = assets_public_path.rstrip("/")
+    path, sep, fragment = src.partition("#")
+    norm_path = "/" + path.lstrip("/")
+
+    if norm_path.startswith("/assets/images/"):
+        filename = norm_path[len("/assets/images/"):]
+        res = f"{base_public}/images/{filename}"
+        return f"{res}{sep}{fragment}" if sep else res
+
+    if norm_path.startswith("/assets/icons/"):
+        filename = norm_path[len("/assets/icons/"):]
+        res = f"{base_public}/icons/{filename}"
+        return f"{res}{sep}{fragment}" if sep else res
+
     return src
 
 
-def format_img_jsx(img: Tag, image_public_path: str = "/docs-assets/images") -> str:
+def format_img_jsx(img: Tag, assets_public_path: str = "/docs-assets") -> str:
     raw_src = str(img.get("src", ""))
-    src = rewrite_image_src(raw_src, image_public_path)
+    src = rewrite_asset_src(raw_src, assets_public_path)
     alt = str(img.get("alt", ""))
     attrs = [f"src={json.dumps(src)}", f"alt={json.dumps(alt)}"]
 
@@ -443,13 +448,13 @@ def format_img_jsx(img: Tag, image_public_path: str = "/docs-assets/images") -> 
     return f"<img {' '.join(attrs)} />"
 
 
-def process_preview_code(element: Tag, image_public_path: str = "/docs-assets/images") -> str:
+def process_preview_code(element: Tag, assets_public_path: str = "/docs-assets") -> str:
     pre_block = element.find("pre")
     preview_block = element.find("div", class_="preview")
     images = preview_block.find_all("img") if isinstance(preview_block, Tag) else element.find_all("img")
 
     if not pre_block:
-        return "\n\n".join(format_img_jsx(img, image_public_path) for img in images if isinstance(img, Tag))
+        return "\n\n".join(format_img_jsx(img, assets_public_path) for img in images if isinstance(img, Tag))
 
     code_tag = pre_block.find("code")
     if isinstance(code_tag, Tag):
@@ -466,7 +471,7 @@ def process_preview_code(element: Tag, image_public_path: str = "/docs-assets/im
 
     first_img = images[0]
     raw_src = str(first_img.get("src", ""))
-    src = rewrite_image_src(raw_src, image_public_path)
+    src = rewrite_asset_src(raw_src, assets_public_path)
     alt = str(first_img.get("alt", ""))
 
     escaped_code = (
@@ -487,7 +492,7 @@ def process_preview_code(element: Tag, image_public_path: str = "/docs-assets/im
     )
 
     if len(images) > 1:
-        extra_imgs = "\n\n".join(format_img_jsx(img, image_public_path) for img in images[1:] if isinstance(img, Tag))
+        extra_imgs = "\n\n".join(format_img_jsx(img, assets_public_path) for img in images[1:] if isinstance(img, Tag))
         return f"{preview_mdx}\n\n{extra_imgs}"
 
     return preview_mdx
@@ -574,7 +579,7 @@ def process_code_definition(element: Tag) -> str:
     return format_fenced_code(sig, "typst")
 
 
-def process_heading(element: Tag, link_prefix: str, math_format: str, image_public_path: str) -> str:
+def process_heading(element: Tag, link_prefix: str, math_format: str, assets_public_path: str) -> str:
     level = int(element.name[1])
     heading_id = cast(str | None, element.get("id"))
 
@@ -604,9 +609,9 @@ def process_heading(element: Tag, link_prefix: str, math_format: str, image_publ
             elif child.name == "small" and child.get_text(strip=True).startswith("Since:"):
                 meta_parts.append(f"*{child.get_text(strip=True)}*")
             elif "pill" in classes:
-                type_parts.append(process_inline(child, link_prefix, math_format, image_public_path).strip())
+                type_parts.append(process_inline(child, link_prefix, math_format, assets_public_path).strip())
             elif child.name == "div":
-                t_str = "".join(process_inline(c, link_prefix, math_format, image_public_path) for c in child.children).strip()
+                t_str = "".join(process_inline(c, link_prefix, math_format, assets_public_path) for c in child.children).strip()
                 if t_str:
                     type_parts.append(t_str)
 
@@ -636,7 +641,7 @@ def process_heading(element: Tag, link_prefix: str, math_format: str, image_publ
             meta_parts.append(f"*{txt}*")
         sm.decompose()
 
-    title_text = "".join(process_inline(c, link_prefix, math_format, image_public_path) for c in h_tag.children).strip()
+    title_text = "".join(process_inline(c, link_prefix, math_format, assets_public_path) for c in h_tag.children).strip()
     title_text = re.sub(r"\s+", " ", title_text)
 
     id_suffix = f" [#{heading_id}]" if heading_id else ""
@@ -674,32 +679,32 @@ def escape_table_cell(text: str) -> str:
     return text.replace("|", "\\|").replace("\n", " ").strip()
 
 
-def _render_cell(cell: Tag, link_prefix: str, math_format: str, image_public_path: str) -> str:
+def _render_cell(cell: Tag, link_prefix: str, math_format: str, assets_public_path: str) -> str:
     blocks = [c for c in cell.children if isinstance(c, Tag) and c.name in ("p", "ul", "ol")]
     if blocks:
         parts = []
         for child in cell.children:
             if isinstance(child, Tag) and child.name == "p":
-                txt = "".join(process_inline(c, link_prefix, math_format, image_public_path) for c in child.children).strip()
+                txt = "".join(process_inline(c, link_prefix, math_format, assets_public_path) for c in child.children).strip()
                 if txt:
                     parts.append(txt)
             elif isinstance(child, Tag) and child.name in ("ul", "ol"):
                 li_texts = [
-                    "".join(process_inline(c, link_prefix, math_format, image_public_path) for c in li.children).strip()
+                    "".join(process_inline(c, link_prefix, math_format, assets_public_path) for c in li.children).strip()
                     for li in child.find_all("li", recursive=False)
                 ]
                 parts.append("; ".join(filter(None, li_texts)))
             else:
-                txt = process_inline(child, link_prefix, math_format, image_public_path).strip()
+                txt = process_inline(child, link_prefix, math_format, assets_public_path).strip()
                 if txt:
                     parts.append(txt)
         return escape_table_cell(" <br /> ".join(parts))
 
-    content = "".join(process_inline(c, link_prefix, math_format, image_public_path) for c in cell.children)
+    content = "".join(process_inline(c, link_prefix, math_format, assets_public_path) for c in cell.children)
     return escape_table_cell(content)
 
 
-def process_table(element: Tag, link_prefix: str, math_format: str, image_public_path: str) -> str:
+def process_table(element: Tag, link_prefix: str, math_format: str, assets_public_path: str) -> str:
     rows_md: list[str] = []
     thead = element.find("thead")
     headers: list[str] = []
@@ -708,7 +713,7 @@ def process_table(element: Tag, link_prefix: str, math_format: str, image_public
         header_row = thead.find("tr")
         if isinstance(header_row, Tag):
             for th in header_row.find_all(["th", "td"]):
-                headers.append(_render_cell(th, link_prefix, math_format, image_public_path))
+                headers.append(_render_cell(th, link_prefix, math_format, assets_public_path))
 
     if headers:
         rows_md.append("| " + " | ".join(headers) + " |")
@@ -722,7 +727,7 @@ def process_table(element: Tag, link_prefix: str, math_format: str, image_public
         if tr.parent and tr.parent.name == "thead":
             continue
 
-        cells = [_render_cell(td, link_prefix, math_format, image_public_path) for td in tr.find_all(["td", "th"], recursive=False)]
+        cells = [_render_cell(td, link_prefix, math_format, assets_public_path) for td in tr.find_all(["td", "th"], recursive=False)]
 
         if cells:
             if not headers and not rows_md:
@@ -733,7 +738,7 @@ def process_table(element: Tag, link_prefix: str, math_format: str, image_public
     return "\n".join(rows_md)
 
 
-def process_list(element: Tag, link_prefix: str, math_format: str, image_public_path: str, depth: int = 0) -> str:
+def process_list(element: Tag, link_prefix: str, math_format: str, assets_public_path: str, depth: int = 0) -> str:
     is_ordered = element.name == "ol"
     items: list[str] = []
     indent = "  " * depth
@@ -754,19 +759,19 @@ def process_list(element: Tag, link_prefix: str, math_format: str, image_public_
         for sub in li.children:
             if isinstance(sub, Tag) and sub.name in ("ul", "ol"):
                 flush_inline()
-                parts.append(process_list(sub, link_prefix, math_format, image_public_path, depth + 1))
+                parts.append(process_list(sub, link_prefix, math_format, assets_public_path, depth + 1))
             elif isinstance(sub, Tag) and sub.name == "p":
                 flush_inline()
-                p_text = "".join(process_inline(c, link_prefix, math_format, image_public_path) for c in sub.children).strip()
+                p_text = "".join(process_inline(c, link_prefix, math_format, assets_public_path) for c in sub.children).strip()
                 if p_text:
                     parts.append(p_text)
             elif isinstance(sub, Tag) and sub.name in ("pre", "div", "blockquote", "table"):
                 flush_inline()
-                block = process_element(sub, link_prefix, math_format, image_public_path)
+                block = process_element(sub, link_prefix, math_format, assets_public_path)
                 if block:
                     parts.append(textwrap.indent(block, child_indent))
             else:
-                inline_buf.append(process_inline(sub, link_prefix, math_format, image_public_path))
+                inline_buf.append(process_inline(sub, link_prefix, math_format, assets_public_path))
 
         flush_inline()
 
@@ -785,7 +790,7 @@ def process_list(element: Tag, link_prefix: str, math_format: str, image_public_
     return "\n".join(items)
 
 
-def process_details(element: Tag, link_prefix: str, math_format: str, image_public_path: str) -> str:
+def process_details(element: Tag, link_prefix: str, math_format: str, assets_public_path: str) -> str:
     is_open = element.has_attr("open")
     summary_tag = element.find("summary", recursive=False)
     summary_text = "Details"
@@ -796,7 +801,7 @@ def process_details(element: Tag, link_prefix: str, math_format: str, image_publ
     for child in element.children:
         if child == summary_tag:
             continue
-        res = process_element(child, link_prefix, math_format, image_public_path)
+        res = process_element(child, link_prefix, math_format, assets_public_path)
         if res:
             body_blocks.append(res)
 
@@ -805,13 +810,13 @@ def process_details(element: Tag, link_prefix: str, math_format: str, image_publ
     return f"<details{open_attr}>\n<summary>{escape_mdx_text(summary_text)}</summary>\n\n{inner}\n\n</details>"
 
 
-def process_info_box(element: Tag, link_prefix: str, math_format: str, image_public_path: str) -> str:
-    children_processed = [process_element(c, link_prefix, math_format, image_public_path) for c in element.children]
+def process_info_box(element: Tag, link_prefix: str, math_format: str, assets_public_path: str) -> str:
+    children_processed = [process_element(c, link_prefix, math_format, assets_public_path) for c in element.children]
     inner_content = "\n\n".join(filter(None, children_processed))
     return f"<Callout>\n{inner_content}\n</Callout>"
 
 
-def process_footnote_definition(element: Tag, link_prefix: str, math_format: str, image_public_path: str) -> str:
+def process_footnote_definition(element: Tag, link_prefix: str, math_format: str, assets_public_path: str) -> str:
     fn_id = element.get("id")
     clone = BeautifulSoup(str(element), "html.parser")
     fn_el = clone.find("div", class_="footnote-definition")
@@ -820,7 +825,7 @@ def process_footnote_definition(element: Tag, link_prefix: str, math_format: str
     label = fn_el.find(class_="footnote-definition-label")
     if isinstance(label, Tag):
         label.decompose()
-    content = "".join(process_inline(c, link_prefix, math_format, image_public_path) for c in fn_el.children).strip()
+    content = "".join(process_inline(c, link_prefix, math_format, assets_public_path) for c in fn_el.children).strip()
     return f"[^{fn_id}]: {content}"
 
 
@@ -828,7 +833,7 @@ def process_element(
     element,
     link_prefix: str = "/",
     math_format: str = "latex",
-    image_public_path: str = "/docs-assets/images",
+    assets_public_path: str = "/docs-assets",
 ) -> str | None:
     if isinstance(element, (Comment, Doctype, ProcessingInstruction)):
         return None
@@ -851,35 +856,35 @@ def process_element(
         return process_h1(element)
 
     if element.name in ("h2", "h3", "h4", "h5", "h6"):
-        return process_heading(element, link_prefix, math_format, image_public_path)
+        return process_heading(element, link_prefix, math_format, assets_public_path)
 
     if element.name == "math":
         return process_math(element, math_format)
 
     if element.name == "details":
-        return process_details(element, link_prefix, math_format, image_public_path)
+        return process_details(element, link_prefix, math_format, assets_public_path)
 
     if element.name == "div":
         if "previewed-code" in classes:
-            return process_preview_code(element, image_public_path)
+            return process_preview_code(element, assets_public_path)
         if "code-definition" in classes:
             return process_code_definition(element)
         if "info-box" in classes:
-            return process_info_box(element, link_prefix, math_format, image_public_path)
+            return process_info_box(element, link_prefix, math_format, assets_public_path)
         if "footnote-definition" in classes:
-            return process_footnote_definition(element, link_prefix, math_format, image_public_path)
+            return process_footnote_definition(element, link_prefix, math_format, assets_public_path)
 
     if element.name in ("div", "section", "article", "aside", "figure", "figcaption", "header", "footer"):
-        blocks = [process_element(c, link_prefix, math_format, image_public_path) for c in element.children]
+        blocks = [process_element(c, link_prefix, math_format, assets_public_path) for c in element.children]
         joined = "\n\n".join(filter(None, blocks))
         return joined or None
 
     if element.name == "p":
-        content = "".join(process_inline(c, link_prefix, math_format, image_public_path) for c in element.children).strip()
+        content = "".join(process_inline(c, link_prefix, math_format, assets_public_path) for c in element.children).strip()
         return content or None
 
     if element.name == "blockquote":
-        inner_blocks = [process_element(c, link_prefix, math_format, image_public_path) for c in element.children]
+        inner_blocks = [process_element(c, link_prefix, math_format, assets_public_path) for c in element.children]
         inner = "\n\n".join(filter(None, inner_blocks))
         return textwrap.indent(inner, "> ") if inner else None
 
@@ -890,18 +895,18 @@ def process_element(
         return process_pre(element)
 
     if element.name == "table":
-        return process_table(element, link_prefix, math_format, image_public_path)
+        return process_table(element, link_prefix, math_format, assets_public_path)
 
     if element.name in ("ul", "ol"):
-        return process_list(element, link_prefix, math_format, image_public_path)
+        return process_list(element, link_prefix, math_format, assets_public_path)
 
     if element.name == "img":
-        return format_img_jsx(element, image_public_path)
+        return format_img_jsx(element, assets_public_path)
 
     if element.name == "svg":
         return None
 
-    inline = process_inline(element, link_prefix, math_format, image_public_path).strip()
+    inline = process_inline(element, link_prefix, math_format, assets_public_path).strip()
     return inline or None
 
 
@@ -909,7 +914,7 @@ def process_inline(
     element,
     link_prefix: str = "/",
     math_format: str = "latex",
-    image_public_path: str = "/docs-assets/images",
+    assets_public_path: str = "/docs-assets",
 ) -> str:
     if isinstance(element, (Comment, Doctype, ProcessingInstruction)):
         return ""
@@ -932,7 +937,7 @@ def process_inline(
         return "<br />"
 
     if element.name == "img":
-        return format_img_jsx(element, image_public_path)
+        return format_img_jsx(element, assets_public_path)
 
     if element.name == "svg":
         return ""
@@ -940,13 +945,13 @@ def process_inline(
     if element.name == "a":
         href = str(element.get("href", ""))
         href = normalize_href(href, link_prefix)
-        text = "".join(process_inline(c, link_prefix, math_format, image_public_path) for c in element.children).strip()
+        text = "".join(process_inline(c, link_prefix, math_format, assets_public_path) for c in element.children).strip()
         if not text:
             return ""
         return f"[{text}]({href})"
 
     if element.name in ("strong", "b"):
-        inner = "".join(process_inline(c, link_prefix, math_format, image_public_path) for c in element.children)
+        inner = "".join(process_inline(c, link_prefix, math_format, assets_public_path) for c in element.children)
         stripped = inner.strip()
         if not stripped:
             return ""
@@ -955,7 +960,7 @@ def process_inline(
         return f"{lead}**{stripped}**{trail}"
 
     if element.name in ("em", "i"):
-        inner = "".join(process_inline(c, link_prefix, math_format, image_public_path) for c in element.children)
+        inner = "".join(process_inline(c, link_prefix, math_format, assets_public_path) for c in element.children)
         stripped = inner.strip()
         if not stripped:
             return ""
@@ -964,7 +969,7 @@ def process_inline(
         return f"{lead}_{stripped}_{trail}"
 
     if element.name in ("sup", "sub"):
-        inner = "".join(process_inline(c, link_prefix, math_format, image_public_path) for c in element.children)
+        inner = "".join(process_inline(c, link_prefix, math_format, assets_public_path) for c in element.children)
         return f"<{element.name}>{inner}</{element.name}>"
 
     if element.name == "code":
@@ -976,7 +981,7 @@ def process_inline(
     if element.name == "span" and "pill" in classes:
         return format_inline_code(element.get_text(strip=True))
 
-    return "".join(process_inline(c, link_prefix, math_format, image_public_path) for c in element.children)
+    return "".join(process_inline(c, link_prefix, math_format, assets_public_path) for c in element.children)
 
 
 def extract_page_metadata(html_content: str) -> tuple[str, str]:
@@ -1000,7 +1005,7 @@ def html_to_mdx(
     html_content: str,
     link_prefix: str = "/",
     math_format: str = "latex",
-    image_public_path: str = "/docs-assets/images",
+    assets_public_path: str = "/docs-assets",
 ) -> str:
     if not html_content:
         return ""
@@ -1014,7 +1019,7 @@ def html_to_mdx(
             element,
             link_prefix=link_prefix,
             math_format=math_format,
-            image_public_path=image_public_path,
+            assets_public_path=assets_public_path,
         )
         if result:
             output.append(result)
