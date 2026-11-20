@@ -1,0 +1,22 @@
+[project]
+name = "typst-docs-builder"
+version = "0.2.0"
+description = "Typst Documentation Builder & MDX Converter"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "beautifulsoup4>=4.12.0",
+    "gitpython>=3.1.40",
+    "loguru>=0.7.2",
+    "rich>=13.0.0",
+    "typing-extensions>=4.12.0",
+]
+
+[dependency-groups]
+dev = [
+    "types-beautifulsoup4>=4.12.0",
+]
+
+[tool.uv]
+package = false
