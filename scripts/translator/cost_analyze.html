@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор перевода документации — Polza.AI</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --border-subtle: #f1f5f9;
+      --border-focus: #2563eb;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-bg: #eff6ff;
+      --success: #15803d;
+      --success-bg: #f0fdf4;
+      --success-border: #bbf7d0;
+      --warning: #b45309;
+      --warning-bg: #fffbeb;
+      --warning-border: #fef3c7;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, -apple-system, sans-serif;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      padding: 24px;
+      line-height: 1.45;
+      font-size: 13px;
+    }
+
+    .app-layout {
+      max-width: 1540px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* Top Bar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .header-info h1 { font-size: 19px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+    .header-info p { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+
+    /* Layout Grid */
+    .workspace-grid {
+      display: grid;
+      grid-template-columns: 460px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    @media (max-width: 1180px) {
+      .workspace-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .card-head {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fafafa;
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+    }
+    .card-body { padding: 16px; }
+
+    /* Form Fields */
+    .field-group { margin-bottom: 14px; }
+    .field-group:last-child { margin-bottom: 0; }
+    label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 5px; }
+    
+    input[type="text"], input[type="number"], select, textarea {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 7px 10px;
+      font-size: 13px;
+      color: var(--text);
+      outline: none;
+      font-family: inherit;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+    }
+    textarea { font-family: var(--font-mono); font-size: 12px; resize: vertical; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text);
+      transition: all 0.12s ease;
+      user-select: none;
+    }
+    .btn:hover { background: #f8fafc; border-color: #cbd5e1; }
+    .btn-primary { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-sm { padding: 4px 8px; font-size: 11px; }
+
+    /* Collapsible Raw Text Accordion */
+    details.accordion {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: #fafafa;
+      margin-bottom: 14px;
+    }
+    details.accordion summary {
+      padding: 9px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    details.accordion summary::-webkit-details-marker { display: none; }
+    details.accordion summary::after { content: "▼"; font-size: 9px; transition: transform 0.2s; }
+    details.accordion[open] summary::after { transform: rotate(180deg); }
+    details.accordion .acc-content {
+      padding: 12px;
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    }
+
+    /* Model Browser Component */
+    .model-search-toolbar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .model-list-container {
+      max-height: 480px;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+    .model-item {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border-subtle);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      transition: background 0.12s;
+    }
+    .model-item:last-child { border-bottom: none; }
+    .model-item:hover { background: #f8fafc; }
+    .model-item.active {
+      background: var(--primary-bg);
+      border-left: 3px solid var(--primary);
+    }
+    .model-main { flex: 1; min-width: 0; }
+    .model-title-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .model-name { font-weight: 600; font-size: 13px; color: var(--text); }
+    .model-item.active .model-name { color: var(--primary); }
+    .model-vendor {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 1px 5px;
+      border-radius: 3px;
+      background: #f1f5f9;
+      color: var(--text-muted);
+    }
+    .model-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 3px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.35;
+    }
+    .model-rates {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+
+    .model-cost-badge {
+      text-align: right;
+      white-space: nowrap;
+    }
+    .model-total-val {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .model-item.active .model-total-val { color: var(--primary); }
+    .model-total-sub { font-size: 10px; color: var(--text-muted); text-transform: uppercase; }
+
+    /* Summary Bar */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 900px) { .stats-row { grid-template-columns: repeat(2, 1fr); } }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+    }
+    .stat-card.featured {
+      background: #fafcff;
+      border-color: #bfdbfe;
+    }
+    .stat-title { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.02em; }
+    .stat-value { font-size: 22px; font-weight: 800; font-family: var(--font-mono); margin-top: 2px; }
+    .stat-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+    /* Active Model Callout */
+    .active-banner {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .active-banner-left { display: flex; align-items: center; gap: 10px; }
+    .active-banner-name { font-weight: 700; font-size: 14px; color: var(--primary); }
+    .active-banner-pill {
+      font-size: 11px;
+      padding: 2px 7px;
+      background: var(--primary-bg);
+      border: 1px solid #bfdbfe;
+      color: var(--primary);
+      border-radius: 4px;
+      font-family: var(--font-mono);
+    }
+
+    /* Table Toolbar */
+    .table-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px 14px;
+      background: #fafafa;
+      border-bottom: 1px solid var(--border);
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+    }
+    .toolbar-left, .toolbar-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+    /* Table */
+    .table-container {
+      overflow-x: auto;
+      max-height: 600px;
+      background: #ffffff;
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
+    }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 12.5px; }
+    th {
+      background: #f8fafc;
+      padding: 8px 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+      user-select: none;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    th.sortable { cursor: pointer; }
+    th.sortable:hover { color: var(--text); background: #f1f5f9; }
+    td { padding: 8px 12px; border-bottom: 1px solid var(--border-subtle); vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    tr.row-excluded { background: #fafafa; opacity: 0.5; }
+    tr:hover:not(.row-excluded) { background: #f8fafc; }
+
+    .file-path {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge-manual {
+      font-size: 10px;
+      padding: 1px 6px;
+      background: var(--warning-bg);
+      color: var(--warning);
+      border: 1px solid var(--warning-border);
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-weight: 600;
+    }
+    .cell-cost {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--text);
+    }
+    .cell-cost.free { color: var(--text-light); text-decoration: line-through; font-weight: normal; }
+
+    /* Drag and drop overlay feedback */
+    .drop-highlight {
+      border: 2px dashed var(--primary) !important;
+      background: var(--primary-bg) !important;
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-layout" id="appRoot">
+
+  <!-- Header -->
+  <header>
+    <div class="header-info">
+      <h1>Калькулятор перевода документации</h1>
+      <p>Смета локализации Markdown/MDX по тарифам Чат-моделей каталога Polza.AI</p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <button class="btn btn-sm" onclick="exportCSV()">Скачать CSV</button>
+      <button class="btn btn-sm" onclick="copyMarkdownReport()">Скопировать отчет (MD)</button>
+    </div>
+  </header>
+
+  <!-- Workspace Grid -->
+  <div class="workspace-grid">
+
+    <!-- LEFT COLUMN: Parameters & Model Browser -->
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+
+      <!-- 1. Source Folder & Filter -->
+      <div class="card">
+        <div class="card-head">
+          <span>Целевая папка и файлы</span>
+          <span id="folderCountBadge" style="font-size: 11px; color: var(--text-muted);">0 файлов</span>
+        </div>
+        <div class="card-body">
+          <div class="field-group">
+            <label>Фильтр по целевой папке (по умолчанию build/mdx):</label>
+            <input type="text" id="targetFolderInput" value="build/mdx" oninput="onFolderFilterChanged()" placeholder="Например: build/mdx">
+          </div>
+
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <input type="file" id="folderPicker" webkitdirectory directory multiple style="display: none;" onchange="onFilesSelected(event)">
+            <button class="btn btn-primary" style="flex: 1;" onclick="document.getElementById('folderPicker').click()">
+              Выбрать папку проекта
+            </button>
+          </div>
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 6px;">
+            Поддерживаются <code>.md</code>, <code>.mdx</code>, <code>.markdown</code>. Файлы обрабатываются локально.
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Translation & Prompt Settings -->
+      <div class="card">
+        <div class="card-head">Параметры перевода (EN ➔ RU)</div>
+        <div class="card-body">
+          <div class="field-group">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+              <label style="margin: 0;">Системный промпт перевода:</label>
+              <span id="promptTokenCountBadge" style="font-size: 11px; font-family: var(--font-mono); color: var(--primary);">~0 токенов</span>
+            </div>
+            <textarea id="systemPromptInput" rows="3" oninput="onPromptInput()">You are a professional technical translator. Translate this Markdown/MDX documentation from English to Russian. Preserve all markdown tags, frontmatter, code blocks, links, and layout intact.</textarea>
+          </div>
+
+          <div class="field-group" style="margin: 0;">
+            <label>Коэффициент расширения объема (RU / EN):</label>
+            <input type="number" id="expansionRatioInput" value="1.18" step="0.05" min="0.5" max="3" onchange="recalculateAll()">
+            <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Русский текст длиннее английского оригинала в среднем на 15–20%.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Models Browser with Search, Sort & Total Costs -->
+      <div class="card">
+        <div class="card-head">
+          <span>Чат-модели Polza.AI</span>
+          <span id="modelsCountBadge" style="font-size: 11px; color: var(--text-muted);">0 моделей</span>
+        </div>
+        <div class="card-body">
+
+          <!-- Collapsible Accordion for raw text -->
+          <details class="accordion" id="rawAccordion">
+            <summary>Обновить текст llms.txt (вручную)</summary>
+            <div class="acc-content">
+              <textarea id="rawTextInput" rows="4" placeholder="Вставьте сюда текст каталога с https://polza.ai/models/llms.txt..."></textarea>
+              <button class="btn btn-sm btn-primary" style="margin-top: 8px;" onclick="parseRawInput()">Распарсить секцию ## Чат-модели</button>
+            </div>
+          </details>
+
+          <!-- Model Search & Sort Toolbar -->
+          <div class="model-search-toolbar">
+            <input type="text" id="modelSearchInput" placeholder="Поиск модели (название, вендор)..." oninput="renderModelsList()" style="flex: 1.2;">
+            <select id="modelSortSelect" onchange="renderModelsList()" style="flex: 1;">
+              <option value="cost-asc">Итоговая смета: Дешевые</option>
+              <option value="cost-desc">Итоговая смета: Дорогие</option>
+              <option value="name-asc">По алфавиту (A - Z)</option>
+              <option value="prompt-asc">Запрос / 1М: Дешевые</option>
+              <option value="completion-asc">Ответ / 1М: Дешевые</option>
+            </select>
+          </div>
+
+          <!-- Interactive Model List -->
+          <div class="model-list-container" id="modelListElement">
+            <!-- Rendered by JS -->
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: Dashboard & Files Table -->
+    <div style="display: flex; flex-direction: column;">
+
+      <!-- Key Metrics Row -->
+      <div class="stats-row">
+        <div class="stat-card featured">
+          <div class="stat-title">Итоговая стоимость</div>
+          <div class="stat-value" id="statTotalCost" style="color: var(--primary);">0.00 ₽</div>
+          <div class="stat-sub" id="statActiveModelName">Модель не выбрана</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">Сэкономлено (вручную)</div>
+          <div class="stat-value" id="statSavedCost" style="color: var(--success);">0.00 ₽</div>
+          <div class="stat-sub" id="statExcludedCount">0 файлов исключено</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">Файлы к переводу</div>
+          <div class="stat-value" id="statFilesRatio">0 / 0</div>
+          <div class="stat-sub" id="statFolderNote">Папка: build/mdx</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">Суммарно токенов</div>
+          <div class="stat-value" id="statTotalTokens">0</div>
+          <div class="stat-sub" id="statTokensSplit">Вход: 0 | Выход: 0</div>
+        </div>
+      </div>
+
+      <!-- Active Model Banner -->
+      <div class="active-banner">
+        <div class="active-banner-left">
+          <span style="font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--text-muted);">Активная модель:</span>
+          <span class="active-banner-name" id="bannerModelName">—</span>
+          <span class="active-banner-pill" id="bannerModelRates">0 ₽ / 0 ₽</span>
+        </div>
+        <div style="font-size: 11px; color: var(--text-muted);" id="bannerModelDesc">
+          Выберите модель из списка слева
+        </div>
+      </div>
+
+      <!-- Files Table Card -->
+      <div class="card">
+        <div class="table-toolbar">
+          <div class="toolbar-left">
+            <span style="font-weight: 600;">Файлы документации:</span>
+            <input type="text" id="fileFilterInput" placeholder="Фильтр по имени файла..." style="width: 180px; padding: 4px 8px; font-size: 11px;" oninput="renderFilesTable()">
+          </div>
+          <div class="toolbar-right">
+            <button class="btn btn-sm" onclick="toggleAllFiles(true)">Включить все</button>
+            <button class="btn btn-sm" onclick="toggleAllFiles(false)">Исключить все</button>
+            <select id="fileSortSelect" style="width: auto; padding: 4px 8px; font-size: 11px;" onchange="onFileSortSelectChanged()">
+              <option value="tokens-desc">Сортировка: Токены (убыв.)</option>
+              <option value="tokens-asc">Сортировка: Токены (возр.)</option>
+              <option value="cost-desc">Сортировка: Стоимость (убыв.)</option>
+              <option value="cost-asc">Сортировка: Стоимость (возр.)</option>
+              <option value="path-asc">Сортировка: Путь (А - Я)</option>
+              <option value="status-desc">Сортировка: Статус (AI ➔ Ручной)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 44px; text-align: center;">AI</th>
+                <th class="sortable" onclick="setFileSort('path')">Файл документации</th>
+                <th class="sortable" style="text-align: right;" onclick="setFileSort('tokens')">Токены (Вход / Выход)</th>
+                <th class="sortable" style="text-align: right;" onclick="setFileSort('cost')">Стоимость перевода</th>
+                <th style="width: 110px; text-align: center;">Режим</th>
+              </tr>
+            </thead>
+            <tbody id="filesTableBody">
+              <tr>
+                <td colspan="5" style="text-align: center; padding: 48px 16px; color: var(--text-muted);">
+                  Файлы еще не загружены. Нажмите <b>«Выбрать папку проекта»</b> в блоке слева.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+/**
+ * Application State
+ */
+let parsedModels = [];
+let activeModelId = null;
+let allFiles = [];
+
+let fileSortField = 'tokens';
+let fileSortDir = 'desc';
+
+// Предзагруженный фрагмент из вашего текста
+const INITIAL_PASTE = `## Чат-модели (282)
+
+- [Google: Gemini 4 Neon](https://polza.ai/models/google/gemini-4-neon.md): Модель для программирования, многошаговых задач и анализа материалов: принимает текст, изображения, аудио, видео и файлы, отвечая текстом; Запрос / 1М: 176,62 ₽; Ответ / 1М: 883,12 ₽; Изображение вход / 1М: 176,62 ₽
+- [Tencent: Hy4 flash](https://polza.ai/models/tencent/hy4-flash.md): Компактный вариант семейства Hy4 для кодовой помощи и агентных задач: принимает текст и изображения, а отвечает текстом; рассчитан на более быстрый отклик; Запрос / 1М: 4,12 ₽; Ответ / 1М: 16,54 ₽
+- [OpenAI: GPT-6.2 Astra Pro](https://polza.ai/models/openai/gpt-6.2-astra-pro.md): Чат-модель с контекстом 1 050 000 токенов. Вход: файл, изображение, текст; Запрос / 1М: 941,99 ₽; Ответ / 1М: 4 709,95 ₽
+- [OpenAI: GPT-6.2 Sol Pro](https://polza.ai/models/openai/gpt-6.2-sol-pro.md): Чат-модель с контекстом 1 050 000 токенов. Вход: файл, изображение, текст; Запрос / 1М: 235,5 ₽; Ответ / 1М: 1 177,49 ₽
+- [OpenAI: GPT-6.2 Astra](https://polza.ai/models/openai/gpt-6.2-astra.md): Чат-модель с контекстом 1 050 000 токенов. Вход: файл, изображение, текст; Запрос / 1М: 941,99 ₽; Ответ / 1М: 4 709,95 ₽
+- [OpenAI: GPT-6.2 Sol](https://polza.ai/models/openai/gpt-6.2-sol.md): Чат-модель с контекстом 1 050 000 токенов. Вход: файл, изображение, текст; Запрос / 1М: 235,5 ₽; Ответ / 1М: 1 177,49 ₽
+- [Qwen: Qwen4 Max](https://polza.ai/models/qwen/qwen4-max.md): Мультимодальная модель для анализа текста, изображений и видео, работы с длинными материалами и подготовки текстовых ответов; рассуждения включены по умолчанию; Запрос / 1М: 167,79 ₽; Ответ / 1М: 503,38 ₽
+- [Google: Gemini 4 Hydrogen](https://polza.ai/models/google/gemini-4-hydrogen.md): Модель для быстрого выполнения задач в агентных сценариях и программировании; подходит для обработки текста, изображений, аудио, видео и файлов; Запрос / 1М: 88,31 ₽; Ответ / 1М: 441,56 ₽
+- [Anthropic: Claude Fable 5.2](https://polza.ai/models/anthropic/claude-fable-5.2.md): Модель для сложной разработки и исследовательских задач: анализирует код, изображения и документы; Запрос / 1М: 941,99 ₽; Ответ / 1М: 4 709,95 ₽
+- [OpenAI: GPT-6.1 Terra](https://polza.ai/models/openai/gpt-6.1-terra.md): Модель помогает работать с текстом и визуальной информацией; Запрос / 1М: 58,87 ₽; Ответ / 1М: 294,37 ₽
+- [DeepSeek: DeepSeek V4.1 Flash 1017](https://polza.ai/models/deepseek/deepseek-v4.1-flash-1017.md): Универсальная модель для диалога, анализа изображений и программирования; Запрос / 1М: 3,53 ₽; Ответ / 1М: 29,44 ₽
+- [Anthropic: Claude Haiku 5.5](https://polza.ai/models/anthropic/claude-haiku-5.5.md): Компактная быстрая модель для суммаризации, классификации; Запрос / 1М: 12,02 ₽; Ответ / 1М: 60,1 ₽
+- [Anthropic: Claude Sonnet 5.5](https://polza.ai/models/anthropic/claude-sonnet-5.5.md): Помогает писать и отлаживать код, разбирать изображения и документы; Запрос / 1М: 189,7 ₽; Ответ / 1М: 948,52 ₽
+- [DeepSeek: DeepSeek V4 Flash](https://polza.ai/models/deepseek/deepseek-v4-flash.md): Обрабатывает текст и изображения, отвечает текстом; Запрос / 1М: 8,24 ₽; Ответ / 1М: 16,48 ₽
+- [OpenAI: GPT-4o](https://polza.ai/models/openai/gpt-4o.md): Универсальная модель для диалога, анализа изображений и работы с текстом и файлами; Запрос / 1М: 300,5 ₽; Ответ / 1М: 1 202,02 ₽
+- [DeepSeek: DeepSeek V3](https://polza.ai/models/deepseek/deepseek-chat.md): Текстовая чат-модель для диалога, программирования, математических задач; Запрос / 1М: 30,14 ₽; Ответ / 1М: 83,84 ₽
+- [Mistral: Mistral Small 3](https://polza.ai/models/mistralai/mistral-small-24b-instruct-2501.md): Текстовая instruct-модель для диалогов, следования инструкциям; Запрос / 1М: 4,71 ₽; Ответ / 1М: 7,54 ₽
+- [Meta: Llama 3.3 70B Instruct](https://polza.ai/models/meta-llama/llama-3.3-70b-instruct.md): Текстовая модель для многоязычного диалога; Запрос / 1М: 11,77 ₽; Ответ / 1М: 37,68 ₽`;
+
+/**
+ * Очистка и парсинг цен формата "4 709,95" или "941,99"
+ */
+function parseRuPrice(str) {
+  if (!str) return 0;
+  const cleaned = str.replace(/[\s\u00A0]+/g, '').replace(',', '.');
+  return parseFloat(cleaned) || 0;
+}
+
+/**
+ * Оценка токенов (~3.8 символа на токен в коде / MDX)
+ */
+function estimateTokens(text) {
+  if (!text) return 0;
+  return Math.ceil(text.length / 3.8);
+}
+
+/**
+ * Парсер строк llms.txt строго из секции ## Чат-модели
+ */
+function parseChatModels(rawText) {
+  const models = [];
+  if (!rawText) return models;
+
+  // Поиск секции ## Чат-модели
+  const chatHeaderRegex = /##\s*Чат-модели[^\n]*/i;
+  const matchIdx = rawText.search(chatHeaderRegex);
+
+  let targetBlock = rawText;
+  if (matchIdx !== -1) {
+    const fromChat = rawText.slice(matchIdx);
+    const nextSectionIdx = fromChat.slice(1).search(/\n##\s+/);
+    targetBlock = nextSectionIdx !== -1 ? fromChat.slice(0, nextSectionIdx + 1) : fromChat;
+  }
+
+  const lines = targetBlock.split('\n');
+
+  for (let rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line.startsWith('- [')) continue;
+
+    const lineMatch = line.match(/^-\s*\[(.*?)\]\((.*?)\):\s*(.*)$/);
+    if (!lineMatch) continue;
+
+    const fullName = lineMatch[1].trim();
+    const url = lineMatch[2].trim();
+    const rest = lineMatch[3].trim();
+
+    // Запрос / 1М: X ₽ | Ответ / 1М: Y ₽
+    const promptMatch = rest.match(/Запрос\s*\/\s*1[МM]\s*:\s*([\d\s\u00A0]+(?:,\d+)?)\s*₽/i);
+    const completionMatch = rest.match(/Ответ\s*\/\s*1[МM]\s*:\s*([\d\s\u00A0]+(?:,\d+)?)\s*₽/i);
+
+    if (!promptMatch || !completionMatch) continue;
+
+    const promptPrice = parseRuPrice(promptMatch[1]);
+    const completionPrice = parseRuPrice(completionMatch[1]);
+
+    // Выделение вендора (например "Google" из "Google: Gemini 4 Neon")
+    let vendor = "Polza";
+    let displayName = fullName;
+    if (fullName.includes(':')) {
+      const parts = fullName.split(':');
+      vendor = parts[0].trim();
+      displayName = parts.slice(1).join(':').trim();
+    }
+
+    // Чистка описания
+    let desc = rest
+      .replace(/;\s*Запрос\s*\/\s*1[МM]\s*:\s*[\d\s\u00A0]+(?:,\d+)?\s*₽/gi, '')
+      .replace(/;\s*Ответ\s*\/\s*1[МM]\s*:\s*[\d\s\u00A0]+(?:,\d+)?\s*₽/gi, '')
+      .replace(/;\s*Изображение[^\;]*/gi, '')
+      .trim()
+      .replace(/;\s*$/, '');
+
+    models.push({
+      id: fullName.toLowerCase().replace(/[^a-z0-9а-яё]+/gi, '-'),
+      fullName,
+      displayName,
+      vendor,
+      url,
+      description: desc,
+      promptPrice,
+      completionPrice
+    });
+  }
+
+  return models;
+}
+
+function parseRawInput() {
+  const text = document.getElementById('rawTextInput').value;
+  parsedModels = parseChatModels(text);
+  document.getElementById('modelsCountBadge').textContent = `${parsedModels.length} моделей`;
+
+  if (parsedModels.length > 0) {
+    if (!activeModelId || !parsedModels.some(m => m.id === activeModelId)) {
+      activeModelId = parsedModels[0].id;
+    }
+    // Автоматически сворачиваем аккордеон после успешного парсинга
+    document.getElementById('rawAccordion').removeAttribute('open');
+  } else {
+    activeModelId = null;
+  }
+
+  recalculateAll();
+}
+
+/**
+ * Подсчет совокупных токенов активных файлов для мгновенной оценки любой модели
+ */
+function getActiveTokensAggregate() {
+  const targetFiles = getFilteredFiles();
+  const promptTokens = estimateTokens(document.getElementById('systemPromptInput').value);
+  const expansionRatio = parseFloat(document.getElementById('expansionRatioInput').value) || 1.18;
+
+  let totalEffectiveIn = 0;
+  let totalEstOut = 0;
+
+  targetFiles.forEach(f => {
+    if (f.included) {
+      totalEffectiveIn += (f.baseTokens + promptTokens);
+      totalEstOut += Math.round(f.baseTokens * expansionRatio);
+    }
+  });
+
+  return { totalEffectiveIn, totalEstOut };
+}
+
+function calcModelTotalCost(model, tokens) {
+  if (!tokens || (tokens.totalEffectiveIn === 0 && tokens.totalEstOut === 0)) {
+    return 0;
+  }
+  return ((tokens.totalEffectiveIn * model.promptPrice) + (tokens.totalEstOut * model.completionPrice)) / 1000000;
+}
+
+/**
+ * Отрисовка списка моделей (Поиск, Сортировка, Отображение живой цены)
+ */
+function renderModelsList() {
+  const container = document.getElementById('modelListElement');
+  const search = (document.getElementById('modelSearchInput').value || '').toLowerCase().trim();
+  const sortMode = document.getElementById('modelSortSelect').value;
+
+  const tokens = getActiveTokensAggregate();
+
+  // Фильтрация
+  let list = parsedModels.filter(m => {
+    if (!search) return true;
+    return m.fullName.toLowerCase().includes(search) || 
+           m.vendor.toLowerCase().includes(search) || 
+           m.description.toLowerCase().includes(search);
+  });
+
+  // Расчет цены для каждой модели
+  list.forEach(m => {
+    m._currentCost = calcModelTotalCost(m, tokens);
+  });
+
+  // Сортировка моделей
+  list.sort((a, b) => {
+    if (sortMode === 'cost-asc') return a._currentCost - b._currentCost;
+    if (sortMode === 'cost-desc') return b._currentCost - a._currentCost;
+    if (sortMode === 'name-asc') return a.fullName.localeCompare(b.fullName);
+    if (sortMode === 'prompt-asc') return a.promptPrice - b.promptPrice;
+    if (sortMode === 'completion-asc') return a.completionPrice - b.completionPrice;
+    return 0;
+  });
+
+  container.innerHTML = '';
+
+  if (list.length === 0) {
+    container.innerHTML = `<div style="padding: 24px; text-align: center; color: var(--text-muted); font-size: 12px;">Модели не найдены</div>`;
+    return;
+  }
+
+  list.forEach(m => {
+    const item = document.createElement('div');
+    const isActive = m.id === activeModelId;
+    item.className = `model-item ${isActive ? 'active' : ''}`;
+    item.onclick = () => selectModel(m.id);
+
+    const formattedCost = m._currentCost > 0 ? `${m._currentCost.toFixed(2)} ₽` : '0.00 ₽';
+
+    item.innerHTML = `
+      <div class="model-main">
+        <div class="model-title-row">
+          <span class="model-name">${m.displayName}</span>
+          <span class="model-vendor">${m.vendor}</span>
+        </div>
+        <div class="model-desc">${m.description || 'Чат-модель Polza.AI'}</div>
+        <div class="model-rates">
+          Вход: ${m.promptPrice.toFixed(2)} ₽ • Выход: ${m.completionPrice.toFixed(2)} ₽
+        </div>
+      </div>
+      <div class="model-cost-badge">
+        <div class="model-total-val">${formattedCost}</div>
+        <div class="model-total-sub">Итого</div>
+      </div>
+    `;
+    container.appendChild(item);
+  });
+}
+
+function selectModel(id) {
+  activeModelId = id;
+  recalculateAll();
+}
+
+/**
+ * Обработка файлов и целевой папки
+ */
+async function onFilesSelected(event) {
+  const fileList = Array.from(event.target.files);
+  if (!fileList || fileList.length === 0) return;
+
+  const validExts = ['.md', '.mdx', '.markdown'];
+  const processed = [];
+
+  for (const file of fileList) {
+    const path = file.webkitRelativePath || file.name;
+    const isDoc = validExts.some(ext => path.toLowerCase().endsWith(ext));
+    if (!isDoc) continue;
+
+    try {
+      const text = await file.text();
+      const baseTokens = estimateTokens(text);
+      processed.push({
+        id: path,
+        path: path,
+        baseTokens: baseTokens,
+        included: true
+      });
+    } catch (e) {
+      console.error("Ошибка при чтении файла:", path, e);
+    }
+  }
+
+  allFiles = processed;
+  document.getElementById('folderCountBadge').textContent = `${allFiles.length} файлов`;
+  recalculateAll();
+}
+
+function getFilteredFiles() {
+  const targetFolder = (document.getElementById('targetFolderInput').value || '').trim().toLowerCase();
+  if (!targetFolder) return allFiles;
+  return allFiles.filter(f => f.path.toLowerCase().includes(targetFolder));
+}
+
+function onFolderFilterChanged() {
+  recalculateAll();
+}
+
+function onPromptInput() {
+  const text = document.getElementById('systemPromptInput').value;
+  const tokens = estimateTokens(text);
+  document.getElementById('promptTokenCountBadge').textContent = `~${tokens.toLocaleString()} токенов`;
+  recalculateAll();
+}
+
+/**
+ * Сортировка таблицы файлов
+ */
+function setFileSort(field) {
+  if (fileSortField === field) {
+    fileSortDir = fileSortDir === 'asc' ? 'desc' : 'asc';
+  } else {
+    fileSortField = field;
+    fileSortDir = 'desc';
+  }
+  document.getElementById('fileSortSelect').value = `${fileSortField}-${fileSortDir}`;
+  renderFilesTable();
+}
+
+function onFileSortSelectChanged() {
+  const val = document.getElementById('fileSortSelect').value;
+  const parts = val.split('-');
+  fileSortField = parts[0];
+  fileSortDir = parts[1];
+  renderFilesTable();
+}
+
+function sortFiles(files) {
+  return [...files].sort((a, b) => {
+    let res = 0;
+    if (fileSortField === 'tokens') {
+      res = (a.effectiveIn + a.estOut) - (b.effectiveIn + b.estOut);
+    } else if (fileSortField === 'cost') {
+      res = a.cost - b.cost;
+    } else if (fileSortField === 'path') {
+      res = a.path.localeCompare(b.path);
+    } else if (fileSortField === 'status') {
+      res = (a.included === b.included) ? 0 : a.included ? -1 : 1;
+    }
+    return fileSortDir === 'desc' ? -res : res;
+  });
+}
+
+/**
+ * Глобальный перерасчет
+ */
+function recalculateAll() {
+  const activeModel = parsedModels.find(m => m.id === activeModelId) || null;
+  const targetFolder = document.getElementById('targetFolderInput').value.trim();
+  document.getElementById('statFolderNote').textContent = targetFolder ? `Папка: ${targetFolder}` : 'Все папки';
+
+  const systemPrompt = document.getElementById('systemPromptInput').value;
+  const promptTokens = estimateTokens(systemPrompt);
+  document.getElementById('promptTokenCountBadge').textContent = `~${promptTokens.toLocaleString()} токенов`;
+
+  const expansionRatio = parseFloat(document.getElementById('expansionRatioInput').value) || 1.18;
+
+  let totalCost = 0;
+  let savedCost = 0;
+  let totalInTokens = 0;
+  let totalOutTokens = 0;
+  let includedCount = 0;
+
+  const targetFiles = getFilteredFiles();
+
+  targetFiles.forEach(f => {
+    f.effectiveIn = f.baseTokens + promptTokens;
+    f.estOut = Math.round(f.baseTokens * expansionRatio);
+
+    if (activeModel) {
+      f.cost = ((f.effectiveIn * activeModel.promptPrice) + (f.estOut * activeModel.completionPrice)) / 1000000;
+    } else {
+      f.cost = 0;
+    }
+
+    if (f.included) {
+      totalCost += f.cost;
+      totalInTokens += f.effectiveIn;
+      totalOutTokens += f.estOut;
+      includedCount++;
+    } else {
+      savedCost += f.cost;
+    }
+  });
+
+  // Обновление метрик
+  document.getElementById('statTotalCost').textContent = `${totalCost.toFixed(2)} ₽`;
+  document.getElementById('statSavedCost').textContent = `${savedCost.toFixed(2)} ₽`;
+  document.getElementById('statFilesRatio').textContent = `${includedCount} / ${targetFiles.length}`;
+  document.getElementById('statExcludedCount').textContent = `${targetFiles.length - includedCount} файлов вручную (0 ₽)`;
+  document.getElementById('statTotalTokens').textContent = (totalInTokens + totalOutTokens).toLocaleString('ru-RU');
+  document.getElementById('statTokensSplit').textContent = `Вход: ${totalInTokens.toLocaleString()} | Выход: ${totalOutTokens.toLocaleString()}`;
+
+  // Обновление активного баннера
+  if (activeModel) {
+    document.getElementById('statActiveModelName').textContent = activeModel.fullName;
+    document.getElementById('bannerModelName').textContent = activeModel.fullName;
+    document.getElementById('bannerModelRates').textContent = `Запрос: ${activeModel.promptPrice} ₽ • Ответ: ${activeModel.completionPrice} ₽`;
+    document.getElementById('bannerModelDesc').textContent = activeModel.description || 'Чат-модель Polza.AI';
+  } else {
+    document.getElementById('statActiveModelName').textContent = 'Модель не выбрана';
+    document.getElementById('bannerModelName').textContent = '—';
+    document.getElementById('bannerModelRates').textContent = '0 ₽ / 0 ₽';
+    document.getElementById('bannerModelDesc').textContent = 'Выберите модель из списка слева';
+  }
+
+  // Обновляем список моделей и таблицу файлов
+  renderModelsList();
+  renderFilesTable();
+}
+
+function renderFilesTable() {
+  const tbody = document.getElementById('filesTableBody');
+  const fileFilter = (document.getElementById('fileFilterInput')?.value || '').toLowerCase().trim();
+  const targetFiles = getFilteredFiles();
+
+  if (targetFiles.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 40px; color: var(--text-muted);">
+      ${allFiles.length > 0 ? 'Нет файлов, подходящих под фильтр папки.' : 'Файлы не загружены. Выберите папку проекта слева.'}
+    </td></tr>`;
+    return;
+  }
+
+  const filtered = targetFiles.filter(f => !fileFilter || f.path.toLowerCase().includes(fileFilter));
+  const sorted = sortFiles(filtered);
+
+  tbody.innerHTML = '';
+
+  sorted.forEach(f => {
+    const tr = document.createElement('tr');
+    if (!f.included) tr.classList.add('row-excluded');
+
+    tr.innerHTML = `
+      <td style="text-align: center;">
+        <input type="checkbox" ${f.included ? 'checked' : ''} onchange="toggleFile('${f.id}')">
+      </td>
+      <td>
+        <span class="file-path">${f.path}</span>
+        ${!f.included ? '<span class="badge-manual">Вручную (0 ₽)</span>' : ''}
+      </td>
+      <td style="text-align: right; font-family: var(--font-mono); font-size: 11.5px;">
+        <span style="color: var(--text);">${f.effectiveIn.toLocaleString()}</span>
+        <span style="color: var(--text-light);"> / </span>
+        <span style="color: var(--text-muted);">${f.estOut.toLocaleString()}</span>
+      </td>
+      <td style="text-align: right;">
+        <span class="cell-cost ${f.included ? '' : 'free'}">${f.cost.toFixed(2)} ₽</span>
+      </td>
+      <td style="text-align: center;">
+        <button class="btn btn-sm" onclick="toggleFile('${f.id}')">
+          ${f.included ? 'Исключить' : 'Включить'}
+        </button>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function toggleFile(id) {
+  const file = allFiles.find(f => f.id === id);
+  if (file) {
+    file.included = !file.included;
+    recalculateAll();
+  }
+}
+
+function toggleAllFiles(status) {
+  const targetFiles = getFilteredFiles();
+  targetFiles.forEach(f => f.included = status);
+  recalculateAll();
+}
+
+/**
+ * Экспорт отчетов
+ */
+function exportCSV() {
+  const targetFiles = getFilteredFiles();
+  if (targetFiles.length === 0) return alert("Нет файлов для экспорта");
+
+  const activeModel = parsedModels.find(m => m.id === activeModelId);
+  let csv = "Path,Status,Input_Tokens,Output_Tokens,Cost_RUB\n";
+  targetFiles.forEach(f => {
+    csv += `"${f.path}","${f.included ? 'AI' : 'Manual'}",${f.effectiveIn},${f.estOut},${f.cost.toFixed(2)}\n`;
+  });
+
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `translation-estimate-${(activeModel?.displayName || 'models').replace(/\s+/g, '_')}.csv`;
+  a.click();
+}
+
+function copyMarkdownReport() {
+  const targetFiles = getFilteredFiles();
+  if (targetFiles.length === 0) return alert("Нет файлов для отчета");
+
+  const activeModel = parsedModels.find(m => m.id === activeModelId);
+  const totalCost = targetFiles.filter(f => f.included).reduce((acc, f) => acc + f.cost, 0);
+  const totalSaved = targetFiles.filter(f => !f.included).reduce((acc, f) => acc + f.cost, 0);
+
+  let md = `## Смета на перевод документации (Polza.AI)\n\n`;
+  md += `- **Модель:** ${activeModel ? activeModel.fullName : 'Не выбрана'}\n`;
+  if (activeModel) {
+    md += `- **Тарифы:** Вход ${activeModel.promptPrice} ₽ / 1M токенов • Выход ${activeModel.completionPrice} ₽ / 1M токенов\n`;
+  }
+  md += `- **Итого к оплате (AI-перевод):** **${totalCost.toFixed(2)} ₽**\n`;
+  md += `- **Сэкономлено (ручной перевод):** ${totalSaved.toFixed(2)} ₽\n\n`;
+  md += `| Файл | Режим | Токены (In / Out) | Стоимость |\n`;
+  md += `|---|---|---|---|\n`;
+
+  targetFiles.forEach(f => {
+    md += `| \`${f.path}\` | ${f.included ? 'AI' : 'Вручную (0 ₽)'} | ${f.effectiveIn} / ${f.estOut} | ${f.cost.toFixed(2)} ₽ |\n`;
+  });
+
+  navigator.clipboard.writeText(md).then(() => {
+    alert("Маркдаун-отчет скопирован в буфер обмена!");
+  });
+}
+
+// Drag & Drop поддержка для всей страницы
+window.addEventListener('dragover', (e) => e.preventDefault());
+window.addEventListener('drop', (e) => {
+  e.preventDefault();
+  if (e.dataTransfer && e.dataTransfer.files.length > 0) {
+    onFilesSelected({ target: { files: e.dataTransfer.files } });
+  }
+});
+
+// Инициализация при старте
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('rawTextInput').value = INITIAL_PASTE;
+  parseRawInput();
+  onPromptInput();
+});
+</script>
+</body>
+</html>

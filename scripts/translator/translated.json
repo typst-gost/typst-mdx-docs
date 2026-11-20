@@ -1,0 +1,1563 @@
+{
+  "changelog/0.1.0.mdx": {
+    "cost_rub": "0.08297591",
+    "hash": "a42e5c985c137a90500538eaaa08b67fd70400d476bcdcc56f2955b4d9b0793d",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:03:43.782702+00:00"
+  },
+  "changelog/0.10.0.mdx": {
+    "cost_rub": "0.14917537",
+    "hash": "496483d2339254c67dea010701a79cb95f6c6cfd0a6fcbdd116b44f7a95a9bc2",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:03:47.251239+00:00"
+  },
+  "changelog/0.11.0.mdx": {
+    "cost_rub": "0.32285955",
+    "hash": "2f0735b96cc8e0c31ddfc0b8fa83bcb4111f216d30e4a20825a9035cb2c988ab",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:03:59.030513+00:00"
+  },
+  "changelog/0.11.1.mdx": {
+    "cost_rub": "0.06544795",
+    "hash": "bed722195ac61deee38dbc0ee0916cf437db1190cc972230ca36f5a162a90528",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:03:44.528583+00:00"
+  },
+  "changelog/0.12.0.mdx": {
+    "cost_rub": "0.44520832",
+    "hash": "00352e22688cb9c14497b5869b2e945d48de01fa476189fe945a4d1e2000050c",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:04:10.474301+00:00"
+  },
+  "changelog/0.13.0.mdx": {
+    "cost_rub": "0.44336824",
+    "hash": "93a7aedf9c79463b0085bec13da8f01d95f001d097a061a55b00bd3345fd92c1",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:04:25.386876+00:00"
+  },
+  "changelog/0.13.1.mdx": {
+    "cost_rub": "0.02127982",
+    "hash": "686accb432c885e483bcbb256f3a755ef2998bea4677eeb9c79658c3c50098e3",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:03:46.326830+00:00"
+  },
+  "changelog/0.14.0.mdx": {
+    "cost_rub": "1.79321865",
+    "hash": "bf6f2221bc1d6b796de964e18b735fa2a27358fa31093b16eaf5794aa4061635",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:39.470132+00:00"
+  },
+  "changelog/0.14.1.mdx": {
+    "cost_rub": "0.11465718",
+    "hash": "fb2389d536ff7e8dd56905b8da39e5650a13bdc37242a6d0218384aa43b51af8",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:03:56.097312+00:00"
+  },
+  "changelog/0.14.2.mdx": {
+    "cost_rub": "0.06877333",
+    "hash": "4a7a42c554e3cc58fbb213ebbe6c82fb78353a40acd39910d91b08cb8699b977",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:03:59.529692+00:00"
+  },
+  "changelog/0.15.0.mdx": {
+    "cost_rub": "1.12006025",
+    "hash": "cc74986174d4fc07372c982cbbd6ec9571ca68af83cc76dc74e50c96745a57d4",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:15:01.242719+00:00"
+  },
+  "changelog/0.15.1.mdx": {
+    "cost_rub": "0.05110674",
+    "hash": "7459cd185d0c8a3ceeb9f79abd3eee0b396d6beeb09c53f896d92fe5f2d89942",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:04:03.338687+00:00"
+  },
+  "changelog/0.2.0.mdx": {
+    "cost_rub": "0.07555228",
+    "hash": "25601d9522c4b5c1c18f1d76d86d635f5e86c83ed47f47a5966494645c838bc1",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:04:06.903733+00:00"
+  },
+  "changelog/0.3.0.mdx": {
+    "cost_rub": "0.07161965",
+    "hash": "e8f48c04f40b11b0bbcdfe309b4f1cbb538368953aef01a7ffe62883ae9dc091",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:04:14.422466+00:00"
+  },
+  "changelog/0.4.0.mdx": {
+    "cost_rub": "0.0794528",
+    "hash": "9dd5e08ef91ca4e462c995e30f1cc7a9304a4e7ae6485cfc8ad9df86881fd14a",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:04:21.439161+00:00"
+  },
+  "changelog/0.5.0.mdx": {
+    "cost_rub": "0.26634453",
+    "hash": "4a001f16e59c338d5eb5374b178f8ac791a7f1bcb2a213f7b868aad3a49aaa9c",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:04:18.190816+00:00"
+  },
+  "changelog/0.6.0.mdx": {
+    "cost_rub": "0.12301617",
+    "hash": "775ebf6163f393fb6eb903dfa56169d47e7a6896650abc9988c72af100a71829",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:04:22.308100+00:00"
+  },
+  "changelog/0.7.0.mdx": {
+    "cost_rub": "0.28324297",
+    "hash": "c3c04b78e9bdaf5eb5b98484b286021df7a19cb3b705c28ea8c5e10f66fa6cdf",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:04:31.683314+00:00"
+  },
+  "changelog/0.8.0.mdx": {
+    "cost_rub": "0.12631521",
+    "hash": "474e1c218bb0764909b94fd5098a4b5ecb8445504ce512bf94965e3ffb8c9417",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:04:30.544606+00:00"
+  },
+  "changelog/0.9.0.mdx": {
+    "cost_rub": "0.25420861",
+    "hash": "e009b0f10d10af3341606b47dbb74bfe28da95524c770815d8d508d72128197d",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:04:44.413830+00:00"
+  },
+  "changelog/earlier.mdx": {
+    "cost_rub": "0.23929096",
+    "hash": "6feaebce59267fe2091933dcc7400cd15ce4b827ad90220d41654f373612e7d2",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:00.579884+00:00"
+  },
+  "changelog/index.mdx": {
+    "cost_rub": "0.03115617",
+    "hash": "abec9d08baaad0b79f4e70222eb9e2974c5389c83a36020e812e4240530d946a",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:04:37.249524+00:00"
+  },
+  "changelog/meta.json": {
+    "cost_rub": "0.01430668",
+    "hash": "91683088cec3726edbc6874eeed89e7b6d587cadccab4165a015ffe5108442dc",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:04:38.756307+00:00"
+  },
+  "guides/accessibility.mdx": {
+    "cost_rub": "0.5270759",
+    "hash": "66c2870b97916eeaddd7364e798adb087fe37621677b336430f019b409894590",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:24.731061+00:00"
+  },
+  "guides/for-latex-users.mdx": {
+    "cost_rub": "0.68248352",
+    "hash": "07f21df1d98f54f41caebf7528d00180c25bfed1cc06487928152877f014adfc",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:09.515508+00:00"
+  },
+  "guides/index.mdx": {
+    "cost_rub": "0.01112246",
+    "hash": "ad462ddbf523bdc6911f85da63eb1fac15272411aa21e9db80635b9d3047b18f",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:02.102602+00:00"
+  },
+  "guides/meta.json": {
+    "cost_rub": "0.00583601",
+    "hash": "4a20fe1dff0dcbe6303b7908fc6fa3ab342aa053f6d4001f305b8f6e5e96f566",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:05:03.494784+00:00"
+  },
+  "guides/page-setup.mdx": {
+    "cost_rub": "0.62076656",
+    "hash": "90c6856fe1f07570ba67a6e75510b573c19f9b762c3e1a1bb2b3a954f8adf526",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:28.731664+00:00"
+  },
+  "guides/tables.mdx": {
+    "cost_rub": "0.6754239",
+    "hash": "063c7b69ece4f11292fa6824d7509366443f2882f4811501b3ea1e523b243e83",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:06.877440+00:00"
+  },
+  "index.mdx": {
+    "cost_rub": "0.06107613",
+    "hash": "9f7b3bca55d83f8ff27a4111d490cd70ced644ff05512016607d9448a6fb886e",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:03:43.524942+00:00"
+  },
+  "meta.json": {
+    "cost_rub": "0.04684894",
+    "hash": "6e471b1cbdd6cd56b1032e8ece29c3e435b99b32081a025e80926712c49b354c",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:03:39.470887+00:00"
+  },
+  "reference/context.mdx": {
+    "cost_rub": "0.23007892",
+    "hash": "015ab32fd4b7709f8cd35a8968cf38d6fb8ffa1e221085bfeb79f0c0730fa2f7",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:34.953299+00:00"
+  },
+  "reference/data-loading/cbor.mdx": {
+    "cost_rub": "0.03482067",
+    "hash": "a396834f505401800d580b41abd5d918dd8f785a2c009b9b46288d67ae52462d",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:53.072523+00:00"
+  },
+  "reference/data-loading/csv.mdx": {
+    "cost_rub": "0.05359235",
+    "hash": "3ee8e01f3cb3dc5c236b811e472aaacda2d01ad7a62c94159894230004b87ec8",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:56.372587+00:00"
+  },
+  "reference/data-loading/index.mdx": {
+    "cost_rub": "0.08696672",
+    "hash": "48ee1f1f530478824cc72af67483fe93deabae09a13e2eb4196c59b01011491d",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:55.834391+00:00"
+  },
+  "reference/data-loading/json.mdx": {
+    "cost_rub": "0.04888778",
+    "hash": "e6a1a1c0bc44d97b9b14e465d04cc1932528a4bf67edc8c1692cff5053f823eb",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:59.825220+00:00"
+  },
+  "reference/data-loading/meta.json": {
+    "cost_rub": "0.0081768",
+    "hash": "338db415ac8b9a44e202c17ef8387e8cf5b511821d7e470b96045fce7f6f9734",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:05:56.953639+00:00"
+  },
+  "reference/data-loading/read.mdx": {
+    "cost_rub": "0.04132495",
+    "hash": "d5bdb7606564641ed989cdadcda680ce06dddc0a6d5760e69273cc355e2fcb42",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:03.394392+00:00"
+  },
+  "reference/data-loading/toml.mdx": {
+    "cost_rub": "0.06815273",
+    "hash": "95178e78672fb7c99f135a77701ed2701fca69015bf4cf99b79724c8336ea02f",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:01.213936+00:00"
+  },
+  "reference/data-loading/xml.mdx": {
+    "cost_rub": "0.06347068",
+    "hash": "d95c11f3125b8066bcd7c075f3f838c0afc088907bc1a0ff6112668e68e77678",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:04.519141+00:00"
+  },
+  "reference/data-loading/yaml.mdx": {
+    "cost_rub": "0.13236452",
+    "hash": "1ecd23e2aabd9787f619a139e835711ea7046f09b5c1bf0196e9ea17f3e05d57",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:07.121111+00:00"
+  },
+  "reference/format/bundle/asset.mdx": {
+    "cost_rub": "0.17273639",
+    "hash": "a1c0234898380a69f60fc56fd9ba18b48321543b03c2c44d3ad59244f9e6a5c4",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:10.608657+00:00"
+  },
+  "reference/format/bundle/index.mdx": {
+    "cost_rub": "0.06612859",
+    "hash": "f0b261ae6df1acf372d26c17a412603caa6cbd57d3f54f0d317477b83ea35b65",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:18.152504+00:00"
+  },
+  "reference/format/bundle/meta.json": {
+    "cost_rub": "0.00385992",
+    "hash": "35ba06bdc6e4d094d08a171463a8b4995b3e5341ebba02fc4f4074509109efcf",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:06:12.292433+00:00"
+  },
+  "reference/format/html/elem.mdx": {
+    "cost_rub": "0.03614761",
+    "hash": "b11ddcd57fa8a96e19c0846ccfbaf8474396fb630f95e37a7c28e9b762cbca81",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:14.195269+00:00"
+  },
+  "reference/format/html/frame.mdx": {
+    "cost_rub": "0.01869699",
+    "hash": "f4773b5139e359aac9fcb1f6d7cc062d5e9013a24ce8827a09936242bd17cd32",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:15.396318+00:00"
+  },
+  "reference/format/html/index.mdx": {
+    "cost_rub": "0.11706501",
+    "hash": "0c39f69aad728a209f1336897720c687085542436daf28e0d6276b6bf9e1b060",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:26.316545+00:00"
+  },
+  "reference/format/html/meta.json": {
+    "cost_rub": "0.07000487",
+    "hash": "123be98c8ddd64c756ea52be8da0c73f48ad620ad368633cb816021052f4973f",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:06:16.640857+00:00"
+  },
+  "reference/format/html/typed.mdx": {
+    "cost_rub": "3.21821608",
+    "hash": "cae377418d43f9e0090b5148fe21b0d18757f18f359e9820ed4e6c271f0b831b",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:25.084677+00:00"
+  },
+  "reference/format/index.mdx": {
+    "cost_rub": "0.0362271",
+    "hash": "97b7d15349101617355f79134b15b44e983d597cacde51ebf844d31cac16507e",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:06.143811+00:00"
+  },
+  "reference/format/meta.json": {
+    "cost_rub": "0.07367819",
+    "hash": "a6244b4c17ce7d7d6e99de293d1db73d958a00eb8163f937c0b3b33f8a6c3ad3",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:06:05.794545+00:00"
+  },
+  "reference/format/pdf/artifact.mdx": {
+    "cost_rub": "0.07250548",
+    "hash": "487b18fd26ce9d251e46cff16351a2607de833a52873ed4bc6aedc2d2b03da23",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:24.284888+00:00"
+  },
+  "reference/format/pdf/attach.mdx": {
+    "cost_rub": "0.03360829",
+    "hash": "fd21c7dec151a6b4f8f591f2ab87df89978694a4ea49c8eeec1b0f9e4bb4335d",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:27.822444+00:00"
+  },
+  "reference/format/pdf/data-cell.mdx": {
+    "cost_rub": "0.07623531",
+    "hash": "d53ef828c08530b60f30aaaa618c0d16dfedf246326d89f60a9045828faa75db",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:30.717553+00:00"
+  },
+  "reference/format/pdf/header-cell.mdx": {
+    "cost_rub": "0.04567195",
+    "hash": "7c0a727232da12b72d64030953fca0535e90b1346551336ce0bd675d2670582b",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:33.006057+00:00"
+  },
+  "reference/format/pdf/index.mdx": {
+    "cost_rub": "0.54914346",
+    "hash": "42445e99dfae0606d7d65dc8ba55a187d225272fe80b1e2be90609590c900b3e",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:40.988750+00:00"
+  },
+  "reference/format/pdf/meta.json": {
+    "cost_rub": "0.0060864",
+    "hash": "2fa8d71cfd7eea2ac8d6e7a0dfb2c14bc9d3753a3134617587713ed8425d1b6d",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:06:34.340715+00:00"
+  },
+  "reference/format/pdf/table-summary.mdx": {
+    "cost_rub": "0.04913043",
+    "hash": "884f7fafc180b5850a7c74a5c01dc1cd4fc473ac2db9f5a6951badb0bd6d490e",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:38.413718+00:00"
+  },
+  "reference/format/png.mdx": {
+    "cost_rub": "0.1145567",
+    "hash": "986c64041c758bae88d115268125f3fa6a98da90c13af5f755ebd3e03e41939c",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:10.321683+00:00"
+  },
+  "reference/format/svg.mdx": {
+    "cost_rub": "0.0600191",
+    "hash": "22b81d22965eeaba57b4f99efe3c366cc472154c0c9a3cec4cdf372e70ed9d5a",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:10.931176+00:00"
+  },
+  "reference/foundations/arguments.mdx": {
+    "cost_rub": "0.1078441",
+    "hash": "55efd76799d41e2ad0b5a33123833ced3b9436890e0da85a10a8484a179d4d1c",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:46.033074+00:00"
+  },
+  "reference/foundations/array.mdx": {
+    "cost_rub": "0.63362865",
+    "hash": "919bb57010375dd82d05f995a146e41cefd11308efe25d92e726aef6e4136acd",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:37.270799+00:00"
+  },
+  "reference/foundations/assert.mdx": {
+    "cost_rub": "0.04669742",
+    "hash": "14e1e015819a7cb9fbbc6df14bc2cff615bf78c761dc1e1e562b052573f252e4",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:49.377370+00:00"
+  },
+  "reference/foundations/auto.mdx": {
+    "cost_rub": "0.02337086",
+    "hash": "7e92fff440b282f5cc42338ca18b472063481116bc401eaebf5a86be49003aea",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:51.318333+00:00"
+  },
+  "reference/foundations/bool.mdx": {
+    "cost_rub": "0.01954895",
+    "hash": "fed8e910caa6b3ab5b9c90c5c03f037385a3baab358590763656f81c9507d92e",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:54.028564+00:00"
+  },
+  "reference/foundations/bytes.mdx": {
+    "cost_rub": "0.07567071",
+    "hash": "c66c2c47fb8df00372c06e01fc845279b1265d9e1c942dac795458bb0d0d3c96",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:06:59.139207+00:00"
+  },
+  "reference/foundations/calc.mdx": {
+    "cost_rub": "0.8515169",
+    "hash": "bbbfb615f34e5b82f4058e438b0215c70c4498894e802da91a6a1315b26292df",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:39.135216+00:00"
+  },
+  "reference/foundations/content.mdx": {
+    "cost_rub": "0.07969752",
+    "hash": "2dee081187e67b145d8df61b3915415512c6f6592b91b1f0b45e85202536f912",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:09.119385+00:00"
+  },
+  "reference/foundations/datetime.mdx": {
+    "cost_rub": "0.13612357",
+    "hash": "6534763be7fa91b40f893cd6f37ead450d18d3dd2deed5c7afd2ef64f18b208e",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:18.781770+00:00"
+  },
+  "reference/foundations/decimal.mdx": {
+    "cost_rub": "0.18522548",
+    "hash": "ca9dacb0fb3958bfe686e85136ae1dde4f61b5acdefcda0ed3542aa3ccbe5cae",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:18.851440+00:00"
+  },
+  "reference/foundations/dictionary.mdx": {
+    "cost_rub": "0.21702579",
+    "hash": "e8568f20aee018fafc578e7faae23cb121278e2c934f32eb683be8043e7b9b1f",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:24.990097+00:00"
+  },
+  "reference/foundations/duration.mdx": {
+    "cost_rub": "0.06211267",
+    "hash": "df1451c07c5274ef84427b15e8316e2c38672d4a7b99eaf70f7f6595e9fa7410",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:27.862102+00:00"
+  },
+  "reference/foundations/eval.mdx": {
+    "cost_rub": "0.04299361",
+    "hash": "6177289a524e25916b453d036881dd914caa82c36e641139473397d247e3afec",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:29.077337+00:00"
+  },
+  "reference/foundations/float.mdx": {
+    "cost_rub": "0.14981498",
+    "hash": "2a340b9b136c7d178fe7e47ba801a108632291430590305f33594b85c669f710",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:37.773205+00:00"
+  },
+  "reference/foundations/function.mdx": {
+    "cost_rub": "0.10027594",
+    "hash": "779b8660fff907fff937a290eaf62590fb0a5cfc5c1a3936ae6bdce984b9675b",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:36.097964+00:00"
+  },
+  "reference/foundations/index.mdx": {
+    "cost_rub": "0.05062264",
+    "hash": "93d97c38f68cc0efd8241932bf539622bc23b80041b54bfb3a478f173eb5580e",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:40.075851+00:00"
+  },
+  "reference/foundations/int.mdx": {
+    "cost_rub": "0.17715996",
+    "hash": "aaf609ec6ece9d1daa283041732eea93e68643fa44b60bb553ca43ce2e8223c1",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:14.011023+00:00"
+  },
+  "reference/foundations/label.mdx": {
+    "cost_rub": "0.07205939",
+    "hash": "9c89080907866596fccd422ed9c154653a0ed224c78b8f453d381c3a1f9151cd",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:39.845153+00:00"
+  },
+  "reference/foundations/meta.json": {
+    "cost_rub": "0.01274715",
+    "hash": "d959e587b873e94dee3d82ed71f6b7562d72f58f316487ca857f032f4bf471ca",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:07:40.583411+00:00"
+  },
+  "reference/foundations/module.mdx": {
+    "cost_rub": "0.02898366",
+    "hash": "d92eebadf35060802e653e562210b7879ef4dba0d0840e82873ab1b30f77ec67",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:42.489411+00:00"
+  },
+  "reference/foundations/none.mdx": {
+    "cost_rub": "0.01380502",
+    "hash": "648f4b12953bcb29237ff23ebb2fbf36a9fcb3b4ddb0064d9caf44b3b3059433",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:41.856193+00:00"
+  },
+  "reference/foundations/panic.mdx": {
+    "cost_rub": "0.0142177",
+    "hash": "37d8d0d42c30c6561a5bc2b41d1b6c00913f12800d5f2c822a52cb09ea9b45be",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:42.286817+00:00"
+  },
+  "reference/foundations/path.mdx": {
+    "cost_rub": "0.14295863",
+    "hash": "97b3dbc4660bc25a332e9f42f87d4ce70cc9b1bfea80e830ebb7d53d5b1454d3",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:54.197358+00:00"
+  },
+  "reference/foundations/plugin.mdx": {
+    "cost_rub": "0.14220311",
+    "hash": "e2d78f9aeaeef73718b6fb2937fdc5a412e2013e2bdd4ab2aa61a31bcecce3d6",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:51.785043+00:00"
+  },
+  "reference/foundations/regex.mdx": {
+    "cost_rub": "0.076047",
+    "hash": "8f494d0d1f6785c2a566cbeff447b81b02dcbc253280098667b44e205854d9e2",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:49.085768+00:00"
+  },
+  "reference/foundations/repr.mdx": {
+    "cost_rub": "0.03707645",
+    "hash": "d52f5889294d66b2d9dbb861a3dc3793b928b1ac77006ecd26f66674c0eabdea",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:52.193618+00:00"
+  },
+  "reference/foundations/selector.mdx": {
+    "cost_rub": "0.23383098",
+    "hash": "0eae4383fb6a60e3876e849c1f576395cc51c5a04e04d66787caea068b415336",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:06.685721+00:00"
+  },
+  "reference/foundations/std.mdx": {
+    "cost_rub": "0.03740596",
+    "hash": "64111f399be5431389b09a125b5889635b737f0279ea86d7ccf1f09bf4fa8882",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:07:55.992750+00:00"
+  },
+  "reference/foundations/str.mdx": {
+    "cost_rub": "0.32828155",
+    "hash": "27f9a6b04f2a902e89e02727f0e4f119e29d12c159fa8b526a11564769fbab18",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:18.055930+00:00"
+  },
+  "reference/foundations/symbol.mdx": {
+    "cost_rub": "0.04667469",
+    "hash": "c734fbee763ba7c781deb31d2af421be01471c204212e6f9a11ed2daacf90df1",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:02.448406+00:00"
+  },
+  "reference/foundations/sys.mdx": {
+    "cost_rub": "0.02255909",
+    "hash": "b18f8cfbc1d75f98cb077e9db6e53fec434e80c988ea5424c468f65ca88d55dd",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:05.138592+00:00"
+  },
+  "reference/foundations/target.mdx": {
+    "cost_rub": "0.03619936",
+    "hash": "aad785e0c49149840151a5e4f441f0d92c131561a088c05051686e22eba4cee9",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:08.071231+00:00"
+  },
+  "reference/foundations/type.mdx": {
+    "cost_rub": "0.08906125",
+    "hash": "eb5cd2d26457915d8e10677e44d37624e91fcffbe07f03a00fa0efd8bdde9924",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:12.045636+00:00"
+  },
+  "reference/foundations/version.mdx": {
+    "cost_rub": "0.04487447",
+    "hash": "d61925e23724ac9af18395b514e3c7d15a506f1dde20083b5c373cb98b4687ac",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:12.332241+00:00"
+  },
+  "reference/index.mdx": {
+    "cost_rub": "0.03289147",
+    "hash": "78da5defd31ee9b82bc767605272c896a3450af1780eac983bdf67b9a032a094",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:32.890062+00:00"
+  },
+  "reference/introspection/counter.mdx": {
+    "cost_rub": "0.3779232",
+    "hash": "4f499cf344b0448968a061b2c8e2d3ff0887dca724cf43f5e8f3ef942d507039",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:26.125826+00:00"
+  },
+  "reference/introspection/here.mdx": {
+    "cost_rub": "0.04857422",
+    "hash": "1f206cf8625e826d79cae766688e83bad18b3a0fa48ae1f86ab01e58319d57e4",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:14.919388+00:00"
+  },
+  "reference/introspection/index.mdx": {
+    "cost_rub": "0.0329614",
+    "hash": "c1622a8c5a3717b3d0af151d8373cfcee749f373b2223f8fd3a64f6ce8cbca9a",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:15.901023+00:00"
+  },
+  "reference/introspection/locate.mdx": {
+    "cost_rub": "0.05014872",
+    "hash": "49cb14f74f08132ddc38a12f9b6b0ad484465b6a4b71c9b6b16e0781c19511fa",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:19.648310+00:00"
+  },
+  "reference/introspection/location.mdx": {
+    "cost_rub": "0.10438337",
+    "hash": "1c76828292d8e663615a8f04c170a12f5afe645d8d06594cdb07a8ccf1e41c1d",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:24.488148+00:00"
+  },
+  "reference/introspection/meta.json": {
+    "cost_rub": "0.02705289",
+    "hash": "0d029831a70e8ad73d275948c8505b8c70ac2f2b1bec51567ccc08a710b6ed43",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:08:19.661164+00:00"
+  },
+  "reference/introspection/metadata.mdx": {
+    "cost_rub": "0.07184111",
+    "hash": "966732f9c48855f9e35c82dedaf0c2a515140f4206a841f0c369b4f5b79f2cd9",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:22.050746+00:00"
+  },
+  "reference/introspection/query.mdx": {
+    "cost_rub": "0.16351323",
+    "hash": "6927441f796c950e0263c4620e82196f863de9e80b4f2e770289096406063ff9",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:39.743889+00:00"
+  },
+  "reference/introspection/state.mdx": {
+    "cost_rub": "0.29461173",
+    "hash": "de6cad91e3995cc2e379d8feefb14e411966266af743f74b7bd11d7a43997806",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:34.492375+00:00"
+  },
+  "reference/layout/align.mdx": {
+    "cost_rub": "0.04021708",
+    "hash": "e2656d4e4cb53c8eb9500cdb4b3b0b5f068e79b55530b6ca0e1cda7e9f45cf9f",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:28.626564+00:00"
+  },
+  "reference/layout/alignment.mdx": {
+    "cost_rub": "0.12087806",
+    "hash": "07e8e8f6a56e335887215efa98a7b619cb8d8607add83f12c99857d16d662f19",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:36.068956+00:00"
+  },
+  "reference/layout/angle.mdx": {
+    "cost_rub": "0.01162563",
+    "hash": "7fc04d416a321aa2c64589338f5ae1889446383e3f81cbc9b3ed40c6c991b9d0",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:30.431437+00:00"
+  },
+  "reference/layout/block.mdx": {
+    "cost_rub": "0.27719327",
+    "hash": "d28ceec02d3d586377527be5868356d43b054105e1330ce027de8e6f6eb40072",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:38.502195+00:00"
+  },
+  "reference/layout/box.mdx": {
+    "cost_rub": "0.14371989",
+    "hash": "6b34771e02e90c9adbacb4c2f41e2397d01f1b63e7a3c107feaef83747e4bff0",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:44.660762+00:00"
+  },
+  "reference/layout/colbreak.mdx": {
+    "cost_rub": "0.02548683",
+    "hash": "fee1e3b9790f4e53b990f87c2da270d4eb2377b05ab48b50d76f7ee0dca8ad94",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:39.043324+00:00"
+  },
+  "reference/layout/columns.mdx": {
+    "cost_rub": "0.07637053",
+    "hash": "2b266ebbd3571aec582546c13add0dc0e10d844c16f565a1ace1791a89a1a451",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:47.455779+00:00"
+  },
+  "reference/layout/direction.mdx": {
+    "cost_rub": "0.07753865",
+    "hash": "5dc0985efca78602b4a7122f6edc1a99164927332426e7632712a146abb8d4c5",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:46.092889+00:00"
+  },
+  "reference/layout/fraction.mdx": {
+    "cost_rub": "0.01512384",
+    "hash": "9dfe7fdc07aabfdb17bfdcb61dfcd75d88786988116a8c148e9420143432a360",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:41.885279+00:00"
+  },
+  "reference/layout/grid.mdx": {
+    "cost_rub": "0.72116881",
+    "hash": "d2307df3aaac732d68a1d6c7e5c974dc35688dcdcfd1b24dbd628a7cfbefa618",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:15.646546+00:00"
+  },
+  "reference/layout/h.mdx": {
+    "cost_rub": "0.09318559",
+    "hash": "d66092920b8527d6ca376ad5ad193be6b03e273c1286d2bed7ad35ba1e24ca16",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:47.896574+00:00"
+  },
+  "reference/layout/hide.mdx": {
+    "cost_rub": "0.05008923",
+    "hash": "3a8bdb250c30bf2b3018fdded4d6918334cf6c0538f90f094b6bd7283da89412",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:48.787681+00:00"
+  },
+  "reference/layout/index.mdx": {
+    "cost_rub": "0.0613906",
+    "hash": "8d5125444a74fe5ce33321252c3f44bf135deb04323b8d77584a893a26bfacef",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:51.433862+00:00"
+  },
+  "reference/layout/layout.mdx": {
+    "cost_rub": "0.05818004",
+    "hash": "65f52e972f663029a5cd5e3c67579cd6cbeb273d62daeae44f0ce1f27bda23de",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:52.111870+00:00"
+  },
+  "reference/layout/length.mdx": {
+    "cost_rub": "0.06651277",
+    "hash": "e8e9a75373dfa168c09b48cc6be7b53d901599624edecfad40af8cff98babbbb",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:52.657853+00:00"
+  },
+  "reference/layout/measure.mdx": {
+    "cost_rub": "0.07829627",
+    "hash": "8aca360486b7af112a90f9c80311328ef2fd51e6ee5cec410944560504d5f8b0",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:55.571798+00:00"
+  },
+  "reference/layout/meta.json": {
+    "cost_rub": "0.0520742",
+    "hash": "58526ce75257735af593752dfbc37a12e18e36599665357a431458257785b288",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:08:54.026570+00:00"
+  },
+  "reference/layout/move.mdx": {
+    "cost_rub": "0.05668962",
+    "hash": "860eab884e63e57368bb70a9fcd867231c02659639c023ff509eb7e16e8c05d7",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:55.540881+00:00"
+  },
+  "reference/layout/pad.mdx": {
+    "cost_rub": "0.05762814",
+    "hash": "fab983a29158e1a12214129516d376271208b32bfcc89abd67d12bc0b080e43c",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:57.335698+00:00"
+  },
+  "reference/layout/page.mdx": {
+    "cost_rub": "0.77997515",
+    "hash": "f68f0d9b1e31b122167567907d330da4545d0e9e0bd5fa6041b56b55b8d03162",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:31.858781+00:00"
+  },
+  "reference/layout/pagebreak.mdx": {
+    "cost_rub": "0.04972156",
+    "hash": "e3eaa8d8fa6b4a79db2b6ed00ec23f1a7dcb0bc408708cf555da0216000a0878",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:08:58.990516+00:00"
+  },
+  "reference/layout/place.mdx": {
+    "cost_rub": "0.13834096",
+    "hash": "f556da62eb0ede86220691be18fea7b274ff0b2a18087749c0e2102974884860",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:07.584624+00:00"
+  },
+  "reference/layout/ratio.mdx": {
+    "cost_rub": "0.0408332",
+    "hash": "f2aa698a132fdd6a626f3b733d3e2326cccb913e742e2d6ca70552eed3689dd5",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:04.587597+00:00"
+  },
+  "reference/layout/relative.mdx": {
+    "cost_rub": "0.23823097",
+    "hash": "7b763201f122278c7780ad748cd2698e9c3ae5eefffa9a4995e50eb84c8a9d4a",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:08.238926+00:00"
+  },
+  "reference/layout/repeat.mdx": {
+    "cost_rub": "0.05994651",
+    "hash": "13a607aca359d6bbffa2a5f138334e089c9076fd88d1e22c48fffc062bc2f241",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:09.428714+00:00"
+  },
+  "reference/layout/rotate.mdx": {
+    "cost_rub": "0.04535818",
+    "hash": "5d4fb8849c857f8822437218b139c89efdc0d4035f460c4ecfb656d755ea2f25",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:12.695698+00:00"
+  },
+  "reference/layout/scale.mdx": {
+    "cost_rub": "0.06114007",
+    "hash": "8a4cd5feab80f5a37ffb05787297f704198cbc3ff29516a28bcd2ed0fc891334",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:13.380961+00:00"
+  },
+  "reference/layout/skew.mdx": {
+    "cost_rub": "0.05886598",
+    "hash": "0afbfb869d185395e12dbde4db3cfb5d57c98d47c491b540f5ec854ddd8087c1",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:16.730536+00:00"
+  },
+  "reference/layout/stack.mdx": {
+    "cost_rub": "0.10421949",
+    "hash": "67e8d6fa78321e0e44bbea5dee28cf760ca4d0e1ed1a9c3b17f3725944152072",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:17.983626+00:00"
+  },
+  "reference/layout/v.mdx": {
+    "cost_rub": "0.03875559",
+    "hash": "e652f7307351a41a9e3b4e95712870335a09ce84e8d5b7a1ea25beb33b9753bb",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:18.939579+00:00"
+  },
+  "reference/math/accent.mdx": {
+    "cost_rub": "0.11776529",
+    "hash": "29cd3b61972748cfc125f068f430e73ae26f919197a66aa1267c95eeb620ee95",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:26.895170+00:00"
+  },
+  "reference/math/attach.mdx": {
+    "cost_rub": "0.19496382",
+    "hash": "98ae10ef7b27e1f91d40f263a866ae9acb826998f88e474d6e5bf30f35d51681",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:23.617309+00:00"
+  },
+  "reference/math/binom.mdx": {
+    "cost_rub": "0.0345974",
+    "hash": "93a4af8200bfe43224af61ece041d0443e49d3cc35c47b7ccdc618c10e530f31",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:20.852444+00:00"
+  },
+  "reference/math/cancel.mdx": {
+    "cost_rub": "0.09357842",
+    "hash": "26eb946f3ceea1936a0f9bfe163b9b5283c78e26321be9107a9ef0f339b0c63f",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:26.581467+00:00"
+  },
+  "reference/math/cases.mdx": {
+    "cost_rub": "0.07209777",
+    "hash": "2e26b98279c0834bf56d401763ab440bafa36d7421106eb7dfac9ca9e691a7e4",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:29.828059+00:00"
+  },
+  "reference/math/class.mdx": {
+    "cost_rub": "0.04700462",
+    "hash": "6f1deb882e009b7d92d73140ac52a87e51b7f784da5d1ec6f8d589b5e713a26b",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:28.988883+00:00"
+  },
+  "reference/math/equation.mdx": {
+    "cost_rub": "0.09605649",
+    "hash": "0d7d97260829b282752974c88690a0e8ec2bc76a118fb79779c2dbe8b4a1a3ca",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:33.098655+00:00"
+  },
+  "reference/math/frac.mdx": {
+    "cost_rub": "0.10413277",
+    "hash": "2326731e3526cc9add44357e1665388248365acd06d9d1ece17ee6c48f638d8f",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:38.425571+00:00"
+  },
+  "reference/math/index.mdx": {
+    "cost_rub": "0.16839884",
+    "hash": "48b4844551199bfb6f6af77579227f860c024780c2b9bf21e6155726ad9315cf",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:44.379780+00:00"
+  },
+  "reference/math/lr.mdx": {
+    "cost_rub": "0.20366136",
+    "hash": "74905326069a137bc543c784a5b53399e89e688689381ae4c0b258db2896cd39",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:36.337950+00:00"
+  },
+  "reference/math/mat.mdx": {
+    "cost_rub": "0.13624272",
+    "hash": "c4ff105a455321ae944a7c8d0fbb2033fd5716765c67d3e1a843397cb4f72a82",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:41.082818+00:00"
+  },
+  "reference/math/meta.json": {
+    "cost_rub": "0.00712653",
+    "hash": "e9a0e025497585489342639cd5e44273d15ee63f46b71ffd8d312e664e6f1303",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:09:34.469630+00:00"
+  },
+  "reference/math/op.mdx": {
+    "cost_rub": "0.05019068",
+    "hash": "7baf0077c84539c679351fb517ec43a6e7142ea6db67306320cfee5c5406c37a",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:36.352693+00:00"
+  },
+  "reference/math/primes.mdx": {
+    "cost_rub": "0.01180047",
+    "hash": "ca9d2ccb1318c37dcdd041c83793a3e24ffca5813b88d34a40182efde3d01587",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:38.655940+00:00"
+  },
+  "reference/math/roots.mdx": {
+    "cost_rub": "0.0477758",
+    "hash": "3cbed634ed90a54a7c33c2d2a6d1fbfe3e743499dbdebe4a8cca5d4773ed94bf",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:40.976030+00:00"
+  },
+  "reference/math/sizes.mdx": {
+    "cost_rub": "0.07412621",
+    "hash": "6543b007e930ad9ef3162e55829b951ac6cfa884b082650a8294aecdf064f2ad",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:43.629032+00:00"
+  },
+  "reference/math/spaces.mdx": {
+    "cost_rub": "0.06097006",
+    "hash": "932d88bcf9aa9c3447fd9577655a6504b16f1868f61f6e933a25a52eb5f994b3",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:41.667128+00:00"
+  },
+  "reference/math/stretch.mdx": {
+    "cost_rub": "0.04639484",
+    "hash": "46821e7f8e4561e63dd959968c58ae8fb72ac5dabb0d8ca7ffe18159668bc6e5",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:49.724604+00:00"
+  },
+  "reference/math/styles.mdx": {
+    "cost_rub": "0.02632816",
+    "hash": "2197f1e35b4bee9f11e0177598e5f7ea59f7b0a5865b3cb6edc3056924f91a86",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:46.779318+00:00"
+  },
+  "reference/math/underover.mdx": {
+    "cost_rub": "0.20349696",
+    "hash": "7176e4af6150272132aadfb0766f35911a34494d9dafce6634924913a066d1b5",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:50.844165+00:00"
+  },
+  "reference/math/variants.mdx": {
+    "cost_rub": "0.15495538",
+    "hash": "b2fc59e5c5185cd7984d99deaad82a7de22b8399cfa3b17bc365fd32daeb032e",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:49.657137+00:00"
+  },
+  "reference/math/vec.mdx": {
+    "cost_rub": "0.05759667",
+    "hash": "4e585b525586cc29b782e7210b28b98b933797f48b16052a4dc0f8437ac1e8ef",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:48.509804+00:00"
+  },
+  "reference/meta.json": {
+    "cost_rub": "0.01457793",
+    "hash": "5f22baa0e42ae5621599339e5cb2042784ee79362bc218b568c740d739e01e01",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:05:34.789696+00:00"
+  },
+  "reference/model/bibliography.mdx": {
+    "cost_rub": "0.90959961",
+    "hash": "9faabd5ae9b7215b3a37ee1986081a9a9b86359de1a6b22f2b1cf81c9d5e8971",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:58.684481+00:00"
+  },
+  "reference/model/cite.mdx": {
+    "cost_rub": "0.21869466",
+    "hash": "689ef3a84cbd744a4eec0fd09d1da1cad2b9ca0125c030e3f63c142f13ed9d19",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:59.831112+00:00"
+  },
+  "reference/model/divider.mdx": {
+    "cost_rub": "0.04250743",
+    "hash": "6a817f7da9521cf5e4788dbd6681637ba94823bb938550149007b29dd5243138",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:52.283262+00:00"
+  },
+  "reference/model/document.mdx": {
+    "cost_rub": "0.24918373",
+    "hash": "befe43e6265a64bf94c0bb5614406a97ea219e84b5ebcff307060524c447d694",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:54.234338+00:00"
+  },
+  "reference/model/emph.mdx": {
+    "cost_rub": "0.07208005",
+    "hash": "08369ccebb58b794b26961ceade7660fb2c4d46af649f6d005f94bb9ecca7a9c",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:52.743277+00:00"
+  },
+  "reference/model/enum.mdx": {
+    "cost_rub": "0.26778494",
+    "hash": "90372e5e300be47eb433ab50e99ce299ffd625b5489e67b4ae416dc50be5bacf",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:03.330450+00:00"
+  },
+  "reference/model/figure.mdx": {
+    "cost_rub": "0.27207739",
+    "hash": "c23445d29872f2353d526be8b6fd1c398452bff83b82d40e2d1e64813bd06842",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:09.654352+00:00"
+  },
+  "reference/model/footnote.mdx": {
+    "cost_rub": "0.09628196",
+    "hash": "6446f0560ab047f763ae720a6186b6a3c4896d861a7133c6e268d120afa8def4",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:09:59.420798+00:00"
+  },
+  "reference/model/heading.mdx": {
+    "cost_rub": "0.21899672",
+    "hash": "b122a3eebb05db828ac903ecf4c4d1d4a0f478b8b8819d35872d9c02a277831b",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:10.594499+00:00"
+  },
+  "reference/model/index.mdx": {
+    "cost_rub": "0.03283587",
+    "hash": "c7c1da2939d8f587e1914f3637a004ab5cc30b9c54bfc652b7f0d3cb54bb236f",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:01.764558+00:00"
+  },
+  "reference/model/link.mdx": {
+    "cost_rub": "0.15132276",
+    "hash": "ccda916c48c3cca3f1c0ae885b6f1383c2fe392280fa67bd08aa22fc20384eec",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:11.515738+00:00"
+  },
+  "reference/model/list.mdx": {
+    "cost_rub": "0.11765742",
+    "hash": "80de47a52ba670f4a83acb67dedec89f88b7c0ad5ba6aeb9caf9519e06e3f67a",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:08.479651+00:00"
+  },
+  "reference/model/meta.json": {
+    "cost_rub": "0.01450226",
+    "hash": "02e961439220fb86afe6d035ebc0f9abe4da3ca156b64c3c099f6d24f0a7da53",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:10:05.255276+00:00"
+  },
+  "reference/model/numbering.mdx": {
+    "cost_rub": "0.08617687",
+    "hash": "d2657ab5362cd47a47f249b755955ee751150458355e0bfaf5f514933e2c0771",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:10.844759+00:00"
+  },
+  "reference/model/outline.mdx": {
+    "cost_rub": "0.42577948",
+    "hash": "a098d5bde7ee340e193988958965835a4cf16e94df5c853231fcaa9c0884ee78",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:17.299781+00:00"
+  },
+  "reference/model/par.mdx": {
+    "cost_rub": "0.39714175",
+    "hash": "f8f2d8c880168c3e7dbff08ee0621622b352210e5b818a4b525e54e40719f913",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:31.088472+00:00"
+  },
+  "reference/model/parbreak.mdx": {
+    "cost_rub": "0.01734544",
+    "hash": "0f9afcc7b3e5def74b6286714eba51c69bd6d2707a6a2fbcea52eac62ec3519b",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:12.926853+00:00"
+  },
+  "reference/model/quote.mdx": {
+    "cost_rub": "0.16665048",
+    "hash": "539e018ea3c354b2f3390e31623342de085b9428e1f521cde923d5534d31f0de",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:29.059212+00:00"
+  },
+  "reference/model/ref.mdx": {
+    "cost_rub": "0.21380897",
+    "hash": "42e194851c9e8bf3c03b8c52247eea84b61a3610ccfab3a37abfe843721d6ecb",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:19.483451+00:00"
+  },
+  "reference/model/strong.mdx": {
+    "cost_rub": "0.07110563",
+    "hash": "b3a40fd065ae05cafc69bfb031e8b238a7446b749152c9bdf3135b656c1a0c40",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:15.462857+00:00"
+  },
+  "reference/model/table.mdx": {
+    "cost_rub": "0.95481421",
+    "hash": "a920b15f9a6f5afced166a8131b0a048f988c5a5e7a17445ad3201bc02f27cd1",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:33.395420+00:00"
+  },
+  "reference/model/terms.mdx": {
+    "cost_rub": "0.16424542",
+    "hash": "1e940db0bea859e5d5d442d392acf5f2407b382d74d55293dc4554a2a0aefd9d",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:21.409605+00:00"
+  },
+  "reference/model/title.mdx": {
+    "cost_rub": "0.0483819",
+    "hash": "65e7711d576cc833f649f994164e7c53668eb357116ce0c4f4dc688d6f93eb7a",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:22.190887+00:00"
+  },
+  "reference/scripting.mdx": {
+    "cost_rub": "0.28747208",
+    "hash": "249671f3f5060fb0bb6a50796836c0f7fc259249e00561f6ff3c0b811f530e11",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:52.632709+00:00"
+  },
+  "reference/styling.mdx": {
+    "cost_rub": "0.12506596",
+    "hash": "51bc20981f0bfe45fd57a3d34729bc037e5acc2e39773811251710d7b41a8fcf",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:48.067943+00:00"
+  },
+  "reference/symbols/emoji.mdx": {
+    "cost_rub": "0.49936446",
+    "hash": "8c398532b2e0a6d33c2671404dd377e8b66865b6ce6c0b548cc57dea793ae1d3",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:58.486035+00:00"
+  },
+  "reference/symbols/index.mdx": {
+    "cost_rub": "0.07532826",
+    "hash": "e72f1b5201654ae3ea99377f9f35fc5ce537913e0a0bd0e0fb8a1de6410e579c",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:25.104223+00:00"
+  },
+  "reference/symbols/meta.json": {
+    "cost_rub": "0.0027501",
+    "hash": "b2110269db1c382d58064fc4cc4af568e6f77e93dd4655b7fb46084b70076ddc",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:10:26.134031+00:00"
+  },
+  "reference/symbols/sym.mdx": {
+    "cost_rub": "0.46660027",
+    "hash": "233d03cbe24345b7a6adfee67ca881406faa801873db4b6175cc42a9a1ce16f4",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:00.025753+00:00"
+  },
+  "reference/syntax.mdx": {
+    "cost_rub": "0.17051132",
+    "hash": "81042b4cd6537334313a0a304ac338b128dd7b7645be308f70c01cefd810d4b8",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:05:53.192739+00:00"
+  },
+  "reference/text/highlight.mdx": {
+    "cost_rub": "0.10011967",
+    "hash": "99f843eafd7ce9e576ff34dfe08313b58cdc58e48ecf24c283efd77711335ba9",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:34.740366+00:00"
+  },
+  "reference/text/index.mdx": {
+    "cost_rub": "0.02548935",
+    "hash": "27b303c7e670e556695de356266512e0fcaebd7faf7938eb1e17a5caa3054e56",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:33.214078+00:00"
+  },
+  "reference/text/linebreak.mdx": {
+    "cost_rub": "0.06005486",
+    "hash": "0bef390c3024aef3a2e20a1711b954d1ab63b243d9d7080ab8e77d8354c6631f",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:37.173593+00:00"
+  },
+  "reference/text/lorem.mdx": {
+    "cost_rub": "0.04212372",
+    "hash": "7f2dd0be898bd6fdd846e2053befd77753be2327866194cbe538eda72b197c9e",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:37.273043+00:00"
+  },
+  "reference/text/lower.mdx": {
+    "cost_rub": "0.0167472",
+    "hash": "7bfcf8207577002bc873b5135927fcbc2a5589fa51857141c29b9661fb196ad0",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:36.501585+00:00"
+  },
+  "reference/text/meta.json": {
+    "cost_rub": "0.00797607",
+    "hash": "a95870e72678a171800502f9c24b9d3f1b22b68d15ea37e69a76a5fb8523ec55",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:10:37.805835+00:00"
+  },
+  "reference/text/overline.mdx": {
+    "cost_rub": "0.06939728",
+    "hash": "65cd9cbfa694c525df2e42278bae43208b41a3c73a8cacea6e72f7d06257cb3c",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:42.735537+00:00"
+  },
+  "reference/text/raw.mdx": {
+    "cost_rub": "0.63739426",
+    "hash": "d43d97085d366ec06c083b3e2149330bf572d6332cf736e44e688d0e7cacf271",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:12.814699+00:00"
+  },
+  "reference/text/smallcaps.mdx": {
+    "cost_rub": "0.03039132",
+    "hash": "365106aa5fb169d846f5b46aa01d281d72dba4f90e858f0d1dc254638eeefa00",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:41.775506+00:00"
+  },
+  "reference/text/smartquote.mdx": {
+    "cost_rub": "0.07346457",
+    "hash": "d2640a8ed5562ff88b141599cc5a751d8ef1916165c9c595c47abd80fb40effb",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:47.081696+00:00"
+  },
+  "reference/text/strike.mdx": {
+    "cost_rub": "0.06994137",
+    "hash": "1870251550d476d0217081a21ce7406defd921945beace2f31e603e9c1c75f86",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:47.866057+00:00"
+  },
+  "reference/text/sub.mdx": {
+    "cost_rub": "0.05907927",
+    "hash": "7412917fe22ee3d73fef9f836351254f44f48b79077cc35ad87f962a30b65cb3",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:51.172808+00:00"
+  },
+  "reference/text/super.mdx": {
+    "cost_rub": "0.12708337",
+    "hash": "ff7fe47dc6e17a38daa86a5b38a6055f071e82501b0223be428a7d6e225d3c5f",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:52.447136+00:00"
+  },
+  "reference/text/text.mdx": {
+    "cost_rub": "0.48271429",
+    "hash": "73f2af57a85b6995b17b8f316001e4ef538fa058bd2bdc4bea328462fe1a7b86",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:33.093142+00:00"
+  },
+  "reference/text/underline.mdx": {
+    "cost_rub": "0.12661127",
+    "hash": "4810bcb22b5aab40666c037bbfcf9b54f8c9a24253d6f03a70ffe7295111eb39",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:10:58.417311+00:00"
+  },
+  "reference/text/upper.mdx": {
+    "cost_rub": "0.01964257",
+    "hash": "7f5bac6f55983d76d712775a9e29d7721c9cbcffdb1ba725fd7923d1c2214bad",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:00.360797+00:00"
+  },
+  "reference/visualize/circle.mdx": {
+    "cost_rub": "0.06465574",
+    "hash": "fc0e1f212023cdc1a57ec15f4785d472dca250ec32f3014285e5f182cb5078cf",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:03.535228+00:00"
+  },
+  "reference/visualize/color.mdx": {
+    "cost_rub": "1.5509315",
+    "hash": "b5ee655a61a2d7f7fc7567f417d2c0ec276359f347509ebce7a2c38f0c9cdcc5",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:57.311701+00:00"
+  },
+  "reference/visualize/curve.mdx": {
+    "cost_rub": "0.38336688",
+    "hash": "7be1027c63b96a1d7a5e637c9ce669dde513a1fc3a1134ba57d867e965145cb3",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:14.223245+00:00"
+  },
+  "reference/visualize/ellipse.mdx": {
+    "cost_rub": "0.06176708",
+    "hash": "90d9ce2adf85d7f87ed46e3fab9518d6ce50ed38aab7572fcd68fadc5dcb59bc",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:07.333087+00:00"
+  },
+  "reference/visualize/gradient.mdx": {
+    "cost_rub": "0.31260887",
+    "hash": "20b0c246438703a46df59d73a91a8da914fb2c074c9c45dc5b9c20511ae09dd8",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:56.255462+00:00"
+  },
+  "reference/visualize/image.mdx": {
+    "cost_rub": "0.28742405",
+    "hash": "c6a323cb30d440474d9358e7d51a5fd6de279a000bb193e0c483099d87d27e6d",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:23.242567+00:00"
+  },
+  "reference/visualize/index.mdx": {
+    "cost_rub": "0.06190244",
+    "hash": "77ff3547c281116f0b5614e9e1d6c3ddb5c0e82eae49198ffc5a3581a402c105",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:16.597847+00:00"
+  },
+  "reference/visualize/line.mdx": {
+    "cost_rub": "0.20700533",
+    "hash": "f9165ac33accaf9c581994596f276773d09f7271dc1928564bfae1f3f59c4c35",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:19.998343+00:00"
+  },
+  "reference/visualize/meta.json": {
+    "cost_rub": "0.00803218",
+    "hash": "0e2c68c3df78aac0660abb7dc6e6d12196495ff3afe4fe26159501f6294aa542",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:11:21.411258+00:00"
+  },
+  "reference/visualize/polygon.mdx": {
+    "cost_rub": "0.08040143",
+    "hash": "3ba05ee6d8a0877b7553c1ac01349c7c243e1453c0fbfb17af89029e2fcadb3e",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:27.261829+00:00"
+  },
+  "reference/visualize/rect.mdx": {
+    "cost_rub": "0.11465899",
+    "hash": "643d35d5a9e3cca5c8365904a4b36377d4119d0446bda921ca47e0ce7b86773d",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:29.587581+00:00"
+  },
+  "reference/visualize/square.mdx": {
+    "cost_rub": "0.10819315",
+    "hash": "034cc88c41eacbe74e0dd183580bc72e4e572b6187d9a19dee0f017e47d3a31d",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:31.835899+00:00"
+  },
+  "reference/visualize/stroke.mdx": {
+    "cost_rub": "0.13328206",
+    "hash": "b224b32412e9928da86546dea6829301d5c68943d28816c3195def4b2432f94d",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:37.181390+00:00"
+  },
+  "reference/visualize/tiling.mdx": {
+    "cost_rub": "0.24979697",
+    "hash": "92aeda0754c20d052baeb7bcbfbe2bccb87f677796e0f5702142e24b5cf66731",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:37.350078+00:00"
+  },
+  "tutorial/advanced-styling.mdx": {
+    "cost_rub": "0.32315616",
+    "hash": "2201af9ff6df483edd367fec1f77735067369ba46fbd19c5b6d8b7ac882a70a1",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:56.819233+00:00"
+  },
+  "tutorial/formatting.mdx": {
+    "cost_rub": "0.35605595",
+    "hash": "82bda8f2370f8f90319daee0d03da73314d3d070357c4610165515997e48cc5a",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:44.976493+00:00"
+  },
+  "tutorial/index.mdx": {
+    "cost_rub": "0.07096115",
+    "hash": "4b049aa4635ef88ab7111b11fcbf0aedc64452344320c6520f7b2a3c2799b6b8",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:39.713727+00:00"
+  },
+  "tutorial/making-a-template.mdx": {
+    "cost_rub": "0.25247363",
+    "hash": "df780e8e004049d469e4d2b728f909a4f4150ce5c2a3d589bf7e4d4db0d8c06b",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:11:56.370765+00:00"
+  },
+  "tutorial/meta.json": {
+    "cost_rub": "0.00738296",
+    "hash": "6a3fc9375217b667495b2e1ab57839a5da0ad1795d5e0d12edc515f942382b42",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "meta.json",
+    "updated_at": "2026-11-20T20:11:45.926358+00:00"
+  },
+  "tutorial/writing-in-typst.mdx": {
+    "cost_rub": "0.42442387",
+    "hash": "db8e58654aca5eef9c8a69f448cd31b455201f5b4b7112dcf5e29c1e59e753f4",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "type": "mdx",
+    "updated_at": "2026-11-20T20:12:12.400069+00:00"
+  }
+}

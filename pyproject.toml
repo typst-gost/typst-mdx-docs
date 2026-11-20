@@ -8,7 +8,9 @@ license = { text = "MIT" }
 dependencies = [
     "beautifulsoup4>=4.12.0",
     "gitpython>=3.1.40",
+    "httpx>=0.28.1",
     "loguru>=0.7.2",
+    "openai>=3.57.0",
     "rich>=13.0.0",
     "typing-extensions>=4.12.0",
 ]
