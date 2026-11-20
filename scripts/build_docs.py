@@ -15,8 +15,8 @@ if str(SCRIPTS_DIR) not in sys.path:
 from git import Repo
 from loguru import logger
 
-from scripts.parser.parse_docs import DEFAULT_OUTPUT_DIR as DEFAULT_MDX_DIR
-from scripts.parser.parse_docs import parse_docs
+from scripts.parse_docs import DEFAULT_OUTPUT_DIR as DEFAULT_MDX_DIR
+from scripts.parse_docs import parse_docs
 from utils import RichCloneProgress, ensure_directories, run_process_with_progress
 
 SCCACHE_PATH = shutil.which("sccache")
